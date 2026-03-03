@@ -13,9 +13,11 @@
 /* Sections style */
 @import url('./header.css');
 @import url('./hero.css');
-@import url('./our-tails.css');
-@import url('./why-paw-hut.css');
-@import url('./know-more.css');
-@import url('./happy-stories.css');
+@import url('./product.css');
+@import url('./gallery.css');
+@import url('./faq.css');
+@import url('./testimonial.css');
 @import url('./footer.css');
-
+@import url('./mobile-menu.css');
+@import url('./pet-modal.css');
+@import url('./adopt-modal.css');
