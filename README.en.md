@@ -8,7 +8,7 @@ A web application for an animal shelter that helps people find pets and simplifi
 
 ## 🌐 Live Demo
 
-🔗 [https://yuriidavydiuk.github.io/command-project-PawHut/](#) *(add link after deploy)*
+🔗 [https://yuriidavydiuk.github.io/command-project-PawHut/]
 
 ---
 
@@ -20,7 +20,7 @@ A web application for an animal shelter that helps people find pets and simplifi
 
 ## ✨ Features
 
-- 🐶 **Animal Catalog** — animal cards with category filtering and pagination
+- 🐶 **Animal Catalog** — animal cards with category filtering and load more pagination
 - 🔍 **Detailed Info** — modal window with full animal description
 - 📋 **Adoption Form** — submit a request to meet an animal
 - 💬 **Happy Stories** — reviews from people who found their pet (slider)
@@ -40,8 +40,24 @@ A web application for an animal shelter that helps people find pets and simplifi
 | Logic | ![JavaScript](https://img.shields.io/badge/JavaScript_ES6+-F7DF1E?style=flat&logo=javascript&logoColor=black) |
 | Bundler | ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white) |
 | Sliders | ![Swiper](https://img.shields.io/badge/Swiper.js-6332F6?style=flat&logo=swiper&logoColor=white) |
-| Notifications | ![SweetAlert2](https://img.shields.io/badge/SweetAlert2-FF6B6B?style=flat) |
+| Notifications | ![SweetAlert2](https://img.shields.io/badge/SweetAlert2-FF6B6B?style=flat) &nbsp; ![iziToast](https://img.shields.io/badge/iziToast-009688?style=flat) &nbsp; ![basicLightbox](https://img.shields.io/badge/basicLightbox-333333?style=flat) |
+| Star Rating | ![raty-js](https://img.shields.io/badge/raty--js-FFD700?style=flat) &nbsp; ![CSS Star Rating](https://img.shields.io/badge/CSS_Star_Rating-FFD700?style=flat) |
+| Accordion | ![accordion-js](https://img.shields.io/badge/accordion--js-4CAF50?style=flat) |
 | Fonts | IBM Plex Sans · Open Sans (Google Fonts) |
+
+---
+
+## 📦 Libraries
+
+| Library | Purpose |
+|---------|---------|
+| **Swiper.js** | Sliders in the "About Us" and "Happy Stories" sections — arrows, pagination, swipe support |
+| **accordion-js** | Accordion in the FAQ section — expanding/collapsing answers |
+| **raty-js** | Star rating display in review cards (supports fractional values) |
+| **CSS Star Rating** | Alternative star rating implementation using CSS classes |
+| **SweetAlert2** | Push notifications after submitting the adoption form (success / error) |
+| **iziToast** | Lightweight toast notifications for backend request error handling |
+| **basicLightbox** | Lightbox for displaying images or modal windows |
 
 ---
 
@@ -101,7 +117,18 @@ command-project-PawHut/
 │   │   └── footer.css             # Footer
 │   ├── img/
 │   │   ├── gallery/               # Images for About Us slider
-│   │   └── hero/                  # Images for Hero section
+│   │   ├── hero/                  # Images for Hero section
+│   │   └── icons.svg              # SVG icon sprite
+│   ├── js/
+│   │   ├── api.js                 # All backend requests (fetchAnimals, fetchCategories, fetchFeedbacks, postOrder)
+│   │   ├── refs.js                # DOM element references
+│   │   ├── render.js              # HTML render functions for animal and review cards
+│   │   ├── filter.js              # Animal filtering logic by category
+│   │   ├── pagination.js          # "Load More" button logic and batch counting
+│   │   ├── modal.js               # Open/close modal windows (animal details + adoption form)
+│   │   ├── burger.js              # Open/close burger menu
+│   │   ├── slider.js              # Swiper initialization for gallery and testimonial sections
+│   │   └── accordion.js           # Accordion initialization for FAQ section
 │   └── partials/
 │       ├── header.html            # Header markup
 │       ├── mobile-menu.html       # Burger menu markup
@@ -114,14 +141,17 @@ command-project-PawHut/
 │       ├── testimonial.html       # Happy Stories section markup
 │       └── footer.html            # Footer markup
 ├── public/
+│   ├── favicon.svg                # Favicon
+│   ├── company-logo.svg           # Company logo
 │   └── index.html                 # Entry point
-├── main.js                        # Main JS file
+├── main.js                        # Main JS file (imports all modules)
 ├── vite.config.js                 # Vite configuration
 ├── package.json
 ├── .prettierrc.json
 ├── .editorconfig
 ├── .gitignore
-└── README.md
+├── README.md                      # Documentation (UA)
+└── README.en.md                   # Documentation (EN)
 ```
 
 ---

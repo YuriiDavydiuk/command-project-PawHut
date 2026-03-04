@@ -8,7 +8,7 @@
 
 ## 🌐 Live Demo
 
-🔗 [https://yuriidavydiuk.github.io/command-project-PawHut/](#) *(додай посилання після деплою)*
+🔗 [https://yuriidavydiuk.github.io/command-project-PawHut/]
 
 ---
 
@@ -40,8 +40,24 @@
 | Логіка | ![JavaScript](https://img.shields.io/badge/JavaScript_ES6+-F7DF1E?style=flat&logo=javascript&logoColor=black) |
 | Збірник | ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white) |
 | Слайдери | ![Swiper](https://img.shields.io/badge/Swiper.js-6332F6?style=flat&logo=swiper&logoColor=white) |
-| Сповіщення | ![SweetAlert2](https://img.shields.io/badge/SweetAlert2-FF6B6B?style=flat) |
+| Сповіщення | ![SweetAlert2](https://img.shields.io/badge/SweetAlert2-FF6B6B?style=flat) &nbsp; ![iziToast](https://img.shields.io/badge/iziToast-009688?style=flat) &nbsp; ![basicLightbox](https://img.shields.io/badge/basicLightbox-333333?style=flat) |
+| Рейтинг | ![raty-js](https://img.shields.io/badge/raty--js-FFD700?style=flat) &nbsp; ![CSS Star Rating](https://img.shields.io/badge/CSS_Star_Rating-FFD700?style=flat) |
+| Акордеон | ![accordion-js](https://img.shields.io/badge/accordion--js-4CAF50?style=flat) |
 | Шрифти | IBM Plex Sans · Open Sans (Google Fonts) |
+
+---
+
+## 📦 Бібліотеки
+
+| Бібліотека | Призначення |
+|------------|-------------|
+| **Swiper.js** | Слайдери в секціях «Чому Хатинка Лапок» та «Щасливі історії» — стрілки, пагінація, свайп |
+| **accordion-js** | Акордеон у секції FAQ — розгортання/згортання відповідей |
+| **raty-js** | Відображення рейтингу зірочками у відгуках (підтримка дробових значень) |
+| **CSS Star Rating** | Альтернативна реалізація зірочкового рейтингу через CSS-класи |
+| **SweetAlert2** | Пуш-сповіщення після відправки форми заявки (успіх / помилка) |
+| **iziToast** | Toast-сповіщення для обробки помилок запитів до бекенду |
+| **basicLightbox** | Лайтбокс для відображення зображень або модальних вікон |
 
 ---
 
@@ -101,7 +117,18 @@ command-project-PawHut/
 │   │   └── footer.css             # Футер
 │   ├── img/
 │   │   ├── gallery/               # Зображення для слайдера «Про нас»
-│   │   └── hero/                  # Зображення для секції Hero
+│   │   ├── hero/                  # Зображення для секції Hero
+│   │   └── icons.svg              # Спрайт SVG-іконок
+│   ├── js/
+│   │   ├── api.js                 # Всі запити до бекенду (fetchAnimals, fetchCategories, fetchFeedbacks, postOrder)
+│   │   ├── refs.js                # Посилання на DOM-елементи
+│   │   ├── render.js              # Функції рендеру HTML-карток тварин та відгуків
+│   │   ├── filter.js              # Логіка фільтрації тварин за категоріями
+│   │   ├── pagination.js          # Логіка кнопки «Завантажити ще» та підрахунок порцій
+│   │   ├── modal.js               # Відкриття/закриття модальних вікон (тварина + заявка)
+│   │   ├── burger.js              # Відкриття/закриття бургер-меню
+│   │   ├── slider.js              # Ініціалізація Swiper для секцій gallery та testimonial
+│   │   └── accordion.js           # Ініціалізація акордеону для секції FAQ
 │   └── partials/
 │       ├── header.html            # Розмітка хедера
 │       ├── mobile-menu.html       # Розмітка бургер-меню
@@ -114,14 +141,17 @@ command-project-PawHut/
 │       ├── testimonial.html       # Розмітка секції відгуків
 │       └── footer.html            # Розмітка футера
 ├── public/
+│   ├── favicon.svg                # Фавікон
+│   ├── company-logo.svg           # Логотип компанії
 │   └── index.html                 # Точка входу
-├── main.js                        # Головний JS-файл
+├── main.js                        # Головний JS-файл (імпорти всіх модулів)
 ├── vite.config.js                 # Конфігурація Vite
 ├── package.json
 ├── .prettierrc.json
 ├── .editorconfig
 ├── .gitignore
-└── README.md
+├── README.md                      # Документація (UA)
+└── README.en.md                   # Документація (EN)
 ```
 
 ---
