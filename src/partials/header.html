@@ -1,41 +1,36 @@
 <header class="header">
-  <div class="container header">
-    <nav class="header-nav">
-      <!-- left: logo -->
-      <a class="header-logo" href="./index.html"
-        ><img
+  <div class="container">
+    <div class="header-wrapper">
+      <a class="header-logo" href="./index.html">
+        <img
           src="/company-logo.svg"
-          alt="Paw Hut Logo"
+          alt="Хатинка Лапок"
           width="157"
           height="51"
-      /></a>
+        />
+      </a>
 
-      <!-- center: main-menu-->
-      <ul class="header-menu">
-        <li class="header-menu-item">
-          <a class="header-menu-link" href="#">Знайди друга</a>
-        </li>
-        <li class="header-menu-item">
-          <a class="header-menu-link" href="#">Про нас</a>
-        </li>
-        <li class="header-menu-item">
-          <a class="header-menu-link" href="#">Часті запитання</a>
-        </li>
-        <li class="header-menu-item">
-          <a class="header-menu-link" href="#">Історія успіху</a>
-        </li>
-      </ul>
-    </nav>
+      <nav class="header-nav">
+        <ul class="header-menu">
+          <li><a class="header-menu-link" href="#product">Знайди друга</a></li>
+          <li><a class="header-menu-link" href="#gallery">Про нас</a></li>
+          <li><a class="header-menu-link" href="#faq">Часті запитання</a></li>
+          <li><a class="header-menu-link" href="#testimonial">Історія успіху</a></li>
+        </ul>
+      </nav>
+    </div>
 
-    <!-- right: contacts -->
-    <a class="header-right-btn">Взяти друга</a>
-  </div>
-  <!-- mobile button
-    <button class="burger-btn" type="button" data-mobile-open>
-      <svg class="burger-icon" width="24" height="24">
-        <use href="./images/icons.svg#icon-hero-burger-menu"></use>
+    <a class="header-right-btn" href="#">Взяти друга</a>
+
+    <button
+      class="burger-btn"
+      type="button"
+      aria-label="Відкрити меню"
+      data-mobile-open
+    >
+      <svg class="burger-icon" width="24" height="24" aria-hidden="true">
+        <use href="/img/icons.svg#icon-menu"></use>
       </svg>
     </button>
   </div>
-</header> -->
 </header>
