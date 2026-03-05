@@ -1,9 +1,9 @@
 (() => {
   const refs = {
-    openModalBtn: document.querySelector('[data-mobile-open]'),
-    closeModalBtn: document.querySelector('[data-mobile-close]'),
-    overlay: document.querySelector('[data-mobile-overlay]'),
-    modal: document.querySelector('[data-mobile]'),
+    openModalBtn: document.querySelector('[data-burger-open]'),
+    closeModalBtn: document.querySelector('[data-burger-close]'),
+    overlay: document.querySelector('[data-burger-overlay]'),
+    modal: document.querySelector('[data-burger]'),
   };
 
   refs.openModalBtn.addEventListener('click', openMenu);
