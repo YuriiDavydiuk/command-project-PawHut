@@ -21,8 +21,8 @@
             <svg class="icon-star" width="20" height="20">
               <use href="./img/icons.svg#icon-star-filled"></use>
             </svg>
-            <svg class="icon-star" width="20" height="20">
-              <use href="./img/icons.svg#icon-star-filled"></use>
+            <svg class="icon-star icon-star-outline" width="20" height="20">
+              <use href="./img/icons.svg#icon-star-outline"></use>
             </svg>
           </div>
           <p class="testimonial-text">
@@ -37,7 +37,7 @@
           </div>
         </li>
 
-        <li class="testimonial-card swiper-slide">
+        <li class="testimonial-card">
           <div class="testimonial-rating">
             <svg class="icon-star" width="20" height="20">
               <use href="./img/icons.svg#icon-star-filled"></use>
@@ -69,7 +69,13 @@
       </ul>
 
       <div class="testimonials-nav-container">
-        <div class="testimonials-pagination"></div>
+        <div class="testimonials-pagination" aria-label="Пагінація відгуків">
+          <span class="testimonial-dot" aria-hidden="true"></span>
+          <span class="testimonial-dot" aria-hidden="true"></span>
+          <span class="testimonial-dot is-active" aria-hidden="true"></span>
+          <span class="testimonial-dot" aria-hidden="true"></span>
+          <span class="testimonial-dot" aria-hidden="true"></span>
+        </div>
         <div class="testimonials-controls">
           <button
             class="control-btn prev-btn"
