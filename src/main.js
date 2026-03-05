@@ -8,11 +8,12 @@ import { fetchCategories, fetchAnimals, fetchFeedbacks } from './js/api.js';
 import { renderAnimalCards, renderCategories } from './js/render.js';
 
 // UI логіка
-import './js/burger.js';
+// import './js/burger.js';
 import './js/slider.js';
 import './js/accordion.js';
 import './js/filter.js';
 import './js/pagination.js';
+import './js/product.js';
 
 // Модалки
 import './js/modal.js';

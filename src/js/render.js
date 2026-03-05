@@ -1,5 +1,58 @@
-export const renderAnimalCards = animals => {};
-export const renderCategories = categories => {};
+import { refs } from './refs';
+
+// рендер категорій наші хвостики
+export function renderCategories(category) {
+  const markup = category
+    .map(
+      ({ _id, name }) => `
+<li class="category-item" data-id="${_id}">
+    <button type="button" class="category-btn">${name}</button>
+</li>`
+    )
+    .join('');
+
+  refs.tailsFilters.innerHTML = markup;
+}
+
+// рендер карток наші хвостики
+export function renderAnimalCards(products) {
+  const murkup = products.animals
+    .map(
+      ({
+        _id,
+        image,
+        name,
+        categories,
+        age,
+        gender,
+        shortDescription,
+        description,
+        species,
+      }) => `
+    <li class="product-card" data-id="${_id}">
+        <img class="product-img" src="${image}" alt=${description}/>
+        <p class="product-species">${species}</p>
+        <h3 class="product-name">${name}</h3>
+        <p class="product-filter">${categories.map(
+          ({ name }) => `
+          <button type="button" class="product-filter-btn">${name}</button>`
+        )}
+        </p>
+        <p class="product-age-gender"><span class="product-age">${age}</span><span class="product-gender">${gender}</span></p>
+        <p class="product-description">${shortDescription}</p>
+        <button
+        class="btn-more"
+        data-modal-open="details"
+        data-id="${_id}"
+      >
+        Дізнатись більше
+      </button>
+    </li>`
+    )
+    .join('');
+
+  refs.tailsProducts.insertAdjacentHTML('beforeend', murkup);
+}
 
 // Функции для возврата контента
 export function renderDetailsHTML(pet) {

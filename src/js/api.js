@@ -1,9 +1,21 @@
-export const fetchCategories = async () => [];
-export const fetchFeedbacks = async () => [];
+import axios from 'axios';
+import { BASE_URL, ENDPOINTS } from './constans';
 
-export const fetchAnimals = async id => {
-  return null;
+axios.defaults.baseURL = BASE_URL;
+
+export const fetchCategories = async () => {
+  const { data } = await axios(ENDPOINTS.categories);
+
+  return data;
 };
+
+export const fetchAnimals = async () => {
+  const { data } = await axios(ENDPOINTS.animals);
+
+  return data;
+};
+
+export const fetchFeedbacks = async () => [];
 
 // 1. ДАННЫЕ РЕКСА (не смогла подключить API)
 const mockData = {
