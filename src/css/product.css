@@ -156,9 +156,9 @@
   }
 }
 
-.product-filter {
-  /* margin-bottom: 4px; */
-}
+/* .product-filter {
+  margin-bottom: 4px;
+} */
 
 .product-filter-btn {
   font-weight: 600;
@@ -279,4 +279,20 @@
 .product-age-gender {
   display: flex;
   gap: 8px;
+}
+
+/* стилі кнопки */
+.tails-btn:hover {
+  background-color: #eee9e3;
+  color: #02060a;
+}
+.tails-btn:focus {
+  background-color: #c3b49d;
+}
+
+.btn-more:hover {
+  background-color: #88765c;
+}
+.btn-more:focus {
+  background-color: #c3b49d;
 }
