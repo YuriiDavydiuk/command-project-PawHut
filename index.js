@@ -1,4 +1,4 @@
-import{S as b,i as L}from"./assets/vendor-uKMyVCnC.js";(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))i(n);new MutationObserver(n=>{for(const o of n)if(o.type==="childList")for(const a of o.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&i(a)}).observe(document,{childList:!0,subtree:!0});function t(n){const o={};return n.integrity&&(o.integrity=n.integrity),n.referrerPolicy&&(o.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?o.credentials="include":n.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function i(n){if(n.ep)return;n.ep=!0;const o=t(n);fetch(n.href,o)}})();const w=[{question:"Я мрію про пухнастика! Що мені потрібно зробити, щоб забрати хвостика додому?",answer:`Це чудово, що ви готові подарувати дім одному з наших підопічних! Ми дуже раді будемо вам у цьому допомогти. Процес «усиновлення» у нас простий та зрозумілий:
+import{a as p,S as P,i as k}from"./assets/vendor-C59OI8Mo.js";(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))o(i);new MutationObserver(i=>{for(const n of i)if(n.type==="childList")for(const r of n.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&o(r)}).observe(document,{childList:!0,subtree:!0});function e(i){const n={};return i.integrity&&(n.integrity=i.integrity),i.referrerPolicy&&(n.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?n.credentials="include":i.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(i){if(i.ep)return;i.ep=!0;const n=e(i);fetch(i.href,n)}})();const M=[{question:"Я мрію про пухнастика! Що мені потрібно зробити, щоб забрати хвостика додому?",answer:`Це чудово, що ви готові подарувати дім одному з наших підопічних! Ми дуже раді будемо вам у цьому допомогти. Процес «усиновлення» у нас простий та зрозумілий:
     <ol class="faq-list faq-list--ordered">
       <li>Оберіть друга: Придивіться до наших хвостиків у розділі «Знайди друга».</li>
       <li>Залиште заявку: Коли відчуєте, що це «ваша» тваринка, натискайте кнопку «Взяти додому» та заповніть коротку анкету.</li>
@@ -24,7 +24,7 @@ import{S as b,i as L}from"./assets/vendor-uKMyVCnC.js";(function(){const s=docum
       <li>Подарувати необхідне: Ми завжди раді кормам, лікам, наповнювачам для лотків, іграшкам, теплим ковдрам.</li>
       <li>Допомогти інформаційно: Найпростіший, але дуже дієвий спосіб — розповідати про нас у соцмережах. Можливо, саме ваш репост допоможе комусь знайти свою долю!</li>
     </ul>`},{question:"Мені сподобалась одна з ваших тваринок на сайті. Чи можу я приїхати, щоб познайомитися з нею особисто?",answer:`Авжеж! Ми віримо, що справжня магія стається лише при особистій зустрічі. Щоб знайомство було комфортним і для вас, і для тваринки, ми просимо вас спочатку заповнити онлайн-заявку на нашому сайті.
-    <br><br>Після цього з вами зв'яжеться куратор тваринки, щоб домовитись про зручний час для вашого візиту. Такий підхід дозволяє нам приділити вам максимум уваги та уникнути зайвого стресу для наших підопічних. З нетерпінням чекаємо на знайомство!`}],q=()=>{const e=document.getElementById("faqAccordion");e&&(e.innerHTML=w.map(s=>`
+    <br><br>Після цього з вами зв'яжеться куратор тваринки, щоб домовитись про зручний час для вашого візиту. Такий підхід дозволяє нам приділити вам максимум уваги та уникнути зайвого стресу для наших підопічних. З нетерпінням чекаємо на знайомство!`}],T=()=>{const t=document.getElementById("faqAccordion");t&&(t.innerHTML=M.map(s=>`
     <div class="accordion-item">
       <button class="accordion-header">
         <span class="faq-question-text">${s.question}</span>
@@ -38,7 +38,27 @@ import{S as b,i as L}from"./assets/vendor-uKMyVCnC.js";(function(){const s=docum
         <div class="faq-answer-inner">${s.answer}</div>
       </div>
     </div>
-  `).join(""),e.addEventListener("click",s=>{const t=s.target.closest(".accordion-header");if(!t)return;const i=t.parentElement,n=i.classList.contains("active");document.querySelectorAll(".accordion-item").forEach(o=>{o.classList.remove("active")}),n||i.classList.add("active")}))};document.addEventListener("DOMContentLoaded",q);const p={_id:"667ad1b8e4b01a2b3c4d5e01",name:"Рекс",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFx65EkJT0vcMtlDOCihKok2b8o0iIXQtCKw&s",species:"Собака",age:"3 роки",gender:"Хлопчик",behavior:"Дуже добрий та позитивний. Любить людей та інших тварин.",healthStatus:"Артрит, потребує знеболювальних препаратів. Серце в нормі для його віку.",shortDescription:"Старенький пес з артритом. Шукає тихий дім, щоб дожити віку в любові.",description:"Лорд все життя вірно служив своїм господарям, але вони померли. Він дуже спокійний та мудрий пес. Через артрит йому важко ходити по сходах. Він не потребує довгих прогулянок, лише теплого місця та люблячого серця поруч."},x=e=>new Promise((s,t)=>{setTimeout(()=>{e===p._id?s(p):t(new Error("Тваринку не знайдено"))},1e3)});function S(e){return`
+  `).join(""),t.addEventListener("click",s=>{const e=s.target.closest(".accordion-header");if(!e)return;const o=e.parentElement,i=o.classList.contains("active");document.querySelectorAll(".accordion-item").forEach(n=>{n.classList.remove("active")}),i||o.classList.add("active")}))};document.addEventListener("DOMContentLoaded",T);const y={tailsFilters:document.querySelector(".tails-filters"),tailsProducts:document.querySelector(".tails-products"),tailsBtn:document.querySelector(".tails-btn")},C="https://paw-hut.b.goit.study/api/",b={categories:"categories",animals:"animals"};p.defaults.baseURL=C;const E=async()=>{const{data:t}=await p(b.categories);return t},A=async()=>{const{data:t}=await p(b.animals);return t},h={_id:"667ad1b8e4b01a2b3c4d5e01",name:"Рекс",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFx65EkJT0vcMtlDOCihKok2b8o0iIXQtCKw&s",species:"Собака",age:"3 роки",gender:"Хлопчик",behavior:"Дуже добрий та позитивний. Любить людей та інших тварин.",healthStatus:"Артрит, потребує знеболювальних препаратів. Серце в нормі для його віку.",shortDescription:"Старенький пес з артритом. Шукає тихий дім, щоб дожити віку в любові.",description:"Лорд все життя вірно служив своїм господарям, але вони померли. Він дуже спокійний та мудрий пес. Через артрит йому важко ходити по сходах. Він не потребує довгих прогулянок, лише теплого місця та люблячого серця поруч."},B=t=>new Promise((s,e)=>{setTimeout(()=>{t===h._id?s(h):e(new Error("Тваринку не знайдено"))},1e3)});function O(t){const s=t.map(({_id:e,name:o})=>`
+<li class="category-item" data-id="${e}">
+    <button type="button" class="category-btn">${o}</button>
+</li>`).join("");y.tailsFilters.innerHTML=s}function F(t){const s=t.animals.map(({_id:e,image:o,name:i,categories:n,age:r,gender:c,shortDescription:q,description:$,species:x})=>`
+    <li class="product-card" data-id="${e}">
+        <img class="product-img" src="${o}" alt=${$}/>
+        <p class="product-species">${x}</p>
+        <h3 class="product-name">${i}</h3>
+        <p class="product-filter">${n.map(({name:S})=>`
+          <button type="button" class="product-filter-btn">${S}</button>`)}
+        </p>
+        <p class="product-age-gender"><span class="product-age">${r}</span><span class="product-gender">${c}</span></p>
+        <p class="product-description">${q}</p>
+        <button
+        class="btn-more"
+        data-modal-open="details"
+        data-id="${e}"
+      >
+        Дізнатись більше
+      </button>
+    </li>`).join("");y.tailsProducts.insertAdjacentHTML("beforeend",s)}function N(t){return`
     <div class="backdrop is-open">
        <div class="animal-modal">
     <button class="modal-close-btn" data-modal-close type="button">
@@ -48,35 +68,35 @@ import{S as b,i as L}from"./assets/vendor-uKMyVCnC.js";(function(){const s=docum
         </button>
 
       <div class="image-wrapper">
-        <img src="${e.image}" alt="${e.name}" class="animal-img" />
+        <img src="${t.image}" alt="${t.name}" class="animal-img" />
       </div>
       <div class="info-wrapper">
         <div class="animal-data">
-          <p class="animal-type">${e.species}</p>
-          <h2 class="animal-name">${e.name}</h2>
+          <p class="animal-type">${t.species}</p>
+          <h2 class="animal-name">${t.name}</h2>
           <div class="animal-meta">
-            <p class="meta-item age">${e.age}</p>
-            <p class="meta-item gender">${e.gender}</p>
+            <p class="meta-item age">${t.age}</p>
+            <p class="meta-item gender">${t.gender}</p>
           </div>
         </div>
         <div class="description-section">
           <h3 class="description-title">Опис:</h3>
-          <p class="animal-dscr description-text">${e.description}</p>
+          <p class="animal-dscr description-text">${t.description}</p>
         </div>
         <div class="description-section">
           <h3 class="description-title">Здоров'я:</h3>
-          <p class="health-dscr description-text">${e.healthStatus}</p>
+          <p class="health-dscr description-text">${t.healthStatus}</p>
         </div>
         <div class="description-section">
           <h3 class="description-title">Поведiнка:</h3>
-          <p class="short-dscr description-text">${e.shortDescription}</p>
+          <p class="short-dscr description-text">${t.shortDescription}</p>
         </div>
          <button class="btn-primary btn-to-order" data-modal-next="order" type="button">
             Взяти додому
           </button>
       </div>
     </div>
-    </div>`}function k(){return`
+    </div>`}function D(){return`
     <div class="backdrop is-open">
       <div class="animal-modal enter-bottom">
         <button class="modal-close-btn" data-modal-close>
@@ -89,5 +109,5 @@ import{S as b,i as L}from"./assets/vendor-uKMyVCnC.js";(function(){const s=docum
           <p>Форма здесь...</p>
         </div>
       </div>
-    </div>`}(()=>{const e={openModalBtn:document.querySelector("[data-burger-open]"),closeModalBtn:document.querySelector("[data-burger-close]"),overlay:document.querySelector("[data-burger-overlay]"),modal:document.querySelector("[data-burger]")};e.openModalBtn.addEventListener("click",s),e.closeModalBtn.addEventListener("click",t),e.overlay.addEventListener("click",t),document.addEventListener("keydown",n=>{n.key==="Escape"&&e.modal.classList.contains("is-open")&&t()});function s(){e.modal.classList.add("is-open"),document.body.style.overflow="hidden"}function t(){e.modal.classList.remove("is-open"),document.body.style.overflow=""}e.modal.querySelectorAll('a[href*="#"]').forEach(n=>{n.addEventListener("click",t)})})();const r=document.querySelector('[data-modal="order"]'),c=r==null?void 0:r.querySelector(".order-form"),u=r==null?void 0:r.querySelector(".js-order-close"),M=document.querySelectorAll("[data-order-open]");function E(){r&&(r.classList.remove("is-hidden"),document.body.style.overflow="hidden",window.addEventListener("keydown",y),r.addEventListener("click",g))}function f(){r&&(r.classList.add("is-hidden"),document.body.style.overflow="",window.removeEventListener("keydown",y),r.removeEventListener("click",g))}function y(e){e.key==="Escape"&&f()}function g(e){e.target===r&&f()}M.forEach(e=>e.addEventListener("click",E));u==null||u.addEventListener("click",f);c==null||c.addEventListener("submit",$);function v(e,s){const t=e.closest(".form-field"),i=t==null?void 0:t.querySelector(".error-text");e.classList.add("error"),i&&(i.textContent=s,i.classList.add("visible"))}function d(e){const s=e.closest(".form-field"),t=s==null?void 0:s.querySelector(".error-text");e.classList.remove("error"),t&&(t.textContent="",t.classList.remove("visible"))}function h(e,s){return e.value.trim()?(d(e),!0):(v(e,s),!1)}["input","change"].forEach(e=>{c==null||c.addEventListener(e,s=>{const t=s.target;t.matches("input, textarea")&&t.classList.contains("error")&&t.value.trim()&&d(t)})});function P(e){const s=e.value.trim();return/^380\d{9}$/.test(s)?(d(e),!0):(v(e,"Номер телефону має містити 12 цифр і починатися з 380"),!1)}function T(e){const s=e.value.trim();return/^[A-Za-zА-Яа-яІіЇїЄєҐґ\s'-]{3,}$/.test(s)?(d(e),!0):(v(e,"Ім'я має містити мінімум 3 літери"),!1)}async function $(e){e.preventDefault();const{name:s,phone:t,comment:i}=e.target.elements,o=h(s,"Будь ласка введіть ім'я")?T(s):!1,l=h(t,"Будь ласка введіть номер телефону")?P(t):!1;if(!(!o||!l)){b.fire({icon:"warning",title:"Оберіть тваринку",text:"Спочатку відкрийте картку тварини та натисніть “Взяти друга”."});return}}const m=document.getElementById("mw");document.addEventListener("click",async e=>{const s=e.target,t=s.closest("[data-modal-open]"),i=s.closest("[data-modal-close]"),n=s.classList.contains("backdrop");if(t){const o=t.dataset.id,a=t.textContent;t.disabled=!0,t.textContent="Завантаження...";try{const l=await x(o);m.innerHTML=S(l),document.body.style.overflow="hidden"}catch{L.error({title:"Помилка",message:"Тваринку не знайдено",position:"topRight"})}finally{t&&(t.disabled=!1,t.textContent=a)}return}if(i||n){const o=document.querySelector(".animal-modal"),a=document.querySelector(".backdrop");o==null||o.classList.add("exit-up"),a==null||a.style.setProperty("opacity","0"),setTimeout(()=>{m.innerHTML="",document.body.style.overflow=""},400)}s.closest("[data-modal-next]")&&(document.querySelector(".animal-modal").classList.add("exit-up"),setTimeout(()=>{m.innerHTML=k()},400))});
+    </div>`}function H(){const t=document.querySelector(".category-btn");t&&t.classList.add("accent")}I();j();async function I(){try{const t=await E();O([{name:"Всі",_id:"all"},...t]),H()}catch(t){console.log(t)}}async function j(){try{const t=await A();F(t)}catch(t){console.log(t)}}const a=document.querySelector('[data-modal="order"]'),l=a==null?void 0:a.querySelector(".order-form"),u=a==null?void 0:a.querySelector(".js-order-close"),V=document.querySelectorAll("[data-order-open]");function R(){a&&(a.classList.remove("is-hidden"),document.body.style.overflow="hidden",window.addEventListener("keydown",w),a.addEventListener("click",L))}function f(){a&&(a.classList.add("is-hidden"),document.body.style.overflow="",window.removeEventListener("keydown",w),a.removeEventListener("click",L))}function w(t){t.key==="Escape"&&f()}function L(t){t.target===a&&f()}V.forEach(t=>t.addEventListener("click",R));u==null||u.addEventListener("click",f);l==null||l.addEventListener("submit",z);function v(t,s){const e=t.closest(".form-field"),o=e==null?void 0:e.querySelector(".error-text");t.classList.add("error"),o&&(o.textContent=s,o.classList.add("visible"))}function d(t){const s=t.closest(".form-field"),e=s==null?void 0:s.querySelector(".error-text");t.classList.remove("error"),e&&(e.textContent="",e.classList.remove("visible"))}function g(t,s){return t.value.trim()?(d(t),!0):(v(t,s),!1)}["input","change"].forEach(t=>{l==null||l.addEventListener(t,s=>{const e=s.target;e.matches("input, textarea")&&e.classList.contains("error")&&e.value.trim()&&d(e)})});function K(t){const s=t.value.trim();return/^380\d{9}$/.test(s)?(d(t),!0):(v(t,"Номер телефону має містити 12 цифр і починатися з 380"),!1)}function _(t){const s=t.value.trim();return/^[A-Za-zА-Яа-яІіЇїЄєҐґ\s'-]{3,}$/.test(s)?(d(t),!0):(v(t,"Ім'я має містити мінімум 3 літери"),!1)}async function z(t){t.preventDefault();const{name:s,phone:e,comment:o}=t.target.elements,n=g(s,"Будь ласка введіть ім'я")?_(s):!1,c=g(e,"Будь ласка введіть номер телефону")?K(e):!1;if(!(!n||!c)){P.fire({icon:"warning",title:"Оберіть тваринку",text:"Спочатку відкрийте картку тварини та натисніть “Взяти друга”."});return}}const m=document.getElementById("mw");document.addEventListener("click",async t=>{const s=t.target,e=s.closest("[data-modal-open]"),o=s.closest("[data-modal-close]"),i=s.classList.contains("backdrop");if(e){const n=e.dataset.id,r=e.textContent;e.disabled=!0,e.textContent="Завантаження...";try{const c=await B(n);m.innerHTML=N(c),document.body.style.overflow="hidden"}catch{k.error({title:"Помилка",message:"Тваринку не знайдено",position:"topRight"})}finally{e&&(e.disabled=!1,e.textContent=r)}return}if(o||i){const n=document.querySelector(".animal-modal"),r=document.querySelector(".backdrop");n==null||n.classList.add("exit-up"),r==null||r.style.setProperty("opacity","0"),setTimeout(()=>{m.innerHTML="",document.body.style.overflow=""},400)}s.closest("[data-modal-next]")&&(document.querySelector(".animal-modal").classList.add("exit-up"),setTimeout(()=>{m.innerHTML=D()},400))});
 //# sourceMappingURL=index.js.map
