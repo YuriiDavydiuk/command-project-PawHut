@@ -17,10 +17,12 @@ async function getCategories() {
   }
 }
 
+export let allAnimals = [];
+
 async function getAnimalProducts() {
   try {
     const data = await fetchAnimals();
-
+    allAnimals = data.animals;
     renderAnimalCards(data);
   } catch (error) {
     console.log(error);
