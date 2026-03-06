@@ -101,6 +101,7 @@
 .product-card {
   border-radius: 16px;
   padding: 12px;
+  min-height: 499px;
   background-color: #eee9e3;
 }
 
@@ -113,17 +114,26 @@
 @media only screen and (min-width: 1440px) {
   .product-card {
     width: calc((100% - 2 * 32px) / 3);
+    min-height: 604px;
   }
 }
 
 .product-img {
+  width: 100%;
+  max-height: 245px;
   border-radius: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  object-fit: cover;
+  object-position: center;
 }
-
+@media only screen and (min-width: 1440px) {
+  .product-img {
+    max-height: 309px;
+  }
+}
 .product-species {
   font-size: 10px;
-  margin-bottom: 4px;
+  /* margin-bottom: 4px; */
 }
 
 @media only screen and (min-width: 1440px) {
@@ -137,7 +147,7 @@
   font-size: 20px;
   line-height: 1.4;
   letter-spacing: -0.01em;
-  margin-bottom: 4px;
+  /* margin-bottom: 4px; */
 }
 
 @media only screen and (min-width: 1440px) {
@@ -147,7 +157,7 @@
 }
 
 .product-filter {
-  margin-bottom: 4px;
+  /* margin-bottom: 4px; */
 }
 
 .product-filter-btn {
@@ -169,7 +179,7 @@
 .product-age-gender {
   font-weight: 400;
   font-size: 10px;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 }
 
 @media only screen and (min-width: 1440px) {
@@ -184,7 +194,8 @@
 
 .product-description {
   font-size: 12px;
-  margin-bottom: 16px;
+  min-height: 40px;
+  /* margin-bottom: 16px; */
 }
 
 @media only screen and (min-width: 1440px) {
@@ -237,4 +248,35 @@
     width: 192px;
     font-size: 16px;
   }
+}
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Чтобы все карточки в ряду были одной высоты */
+}
+
+/* Верхняя группа: отступы между элементами 4px */
+.card-top-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* МАГИЯ ТУТ: Распорка */
+.spacer {
+  flex-grow: 1; /* Занимает всё свободное место */
+  min-height: 4px; /* Минимальный отступ, если контента очень много */
+}
+
+/* Нижняя группа: отступы между элементами 16px */
+.card-bottom-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Внутри возраста оставляем маленькое расстояние между словами */
+.product-age-gender {
+  display: flex;
+  gap: 8px;
 }

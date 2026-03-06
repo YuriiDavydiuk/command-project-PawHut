@@ -19,9 +19,18 @@ async function getCategories() {
 
 export let allAnimals = [];
 
+function getLimit() {
+  if (window.innerWidth >= 1440) {
+    return 9;
+  } else {
+    return 8;
+  }
+}
+
 async function getAnimalProducts() {
   try {
-    const data = await fetchAnimals();
+    const limit = getLimit();
+    const data = await fetchAnimals(1, limit);
     allAnimals = data.animals;
     renderAnimalCards(data);
   } catch (error) {
