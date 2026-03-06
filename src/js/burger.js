@@ -1,23 +1,34 @@
 (() => {
   const refs = {
-    openModalBtn: document.querySelector('[data-mobile-open]'),
-    closeModalBtn: document.querySelector('[data-mobile-close]'),
-    modal: document.querySelector('[data-mobile]'),
+    openModalBtn: document.querySelector('[data-burger-open]'),
+    closeModalBtn: document.querySelector('[data-burger-close]'),
+    overlay: document.querySelector('[data-burger-overlay]'),
+    modal: document.querySelector('[data-burger]'),
   };
 
-  refs.openModalBtn.addEventListener('click', toggleModal);
-  refs.closeModalBtn.addEventListener('click', toggleModal);
+  refs.openModalBtn.addEventListener('click', openMenu);
+  refs.closeModalBtn.addEventListener('click', closeMenu);
+  refs.overlay.addEventListener('click', closeMenu);
 
-  function toggleModal() {
-    refs.modal.classList.toggle('is-open');
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && refs.modal.classList.contains('is-open')) {
+      closeMenu();
+    }
+  });
+
+  function openMenu() {
+    refs.modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden'; // блокує скрол сторінки
   }
 
-  // Закриття меню при кліку на посилання
+  function closeMenu() {
+    refs.modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
 
+  // Закриття при кліку на якірне посилання
   const anchors = refs.modal.querySelectorAll('a[href*="#"]');
   anchors.forEach(anchor => {
-    anchor.addEventListener('click', () => {
-      refs.modal.classList.remove('is-open');
-    });
+    anchor.addEventListener('click', closeMenu);
   });
 })();

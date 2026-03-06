@@ -1,0 +1,49 @@
+<div class="backdrop is-hidden" data-modal="order">
+  <div class="modal">
+    <button
+      type="button"
+      class="modal-close js-order-close"
+      aria-label="Закрити"
+    >
+      <!--ICON-->
+      <svg class="modal-close-icon" width="32" height="32">
+        <use href="/src/img/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+    <h2 class="modal-title" id="order-title">Залишіть заявку на знайомство</h2>
+    <form class="order-form js-order-form" novalidate>
+      <div class="form-field">
+        <label for="user-name">Імʼя*</label>
+        <input
+          id="user-name"
+          type="text"
+          name="name"
+          placeholder="Андрій"
+          required
+        />
+        <span class="error-text">Будь ласка введіть імʼя</span>
+      </div>
+      <div class="form-field">
+        <label for="user-phone">Телефон*</label>
+        <input
+          id="user-phone"
+          type="tel"
+          name="phone"
+          placeholder="380955559922"
+          required
+        />
+
+        <span class="error-text">Будь ласка введіть номер телефону</span>
+      </div>
+      <div class="form-field">
+        <label for="user-comment">Коментар</label>
+        <textarea
+          name="comment"
+          id="user-comment"
+          placeholder="Напишіть ваш коментар"
+        ></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Надіслати</button>
+    </form>
+  </div>
+</div>

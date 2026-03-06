@@ -14,6 +14,7 @@ import './js/accordion.js';
 import './js/filter.js';
 import './js/pagination.js';
 import './js/product.js';
+import './js/adopt-modal.js';
 
 // Модалки
 import './js/modal.js';
