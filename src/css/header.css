@@ -5,6 +5,10 @@
   min-height: 64px;
 }
 
+.header-btn {
+  display: flex;
+}
+
 .header-menu,
 .header-right-btn {
   display: none;
@@ -25,7 +29,7 @@
     padding: 7.34px 1px 9px;
   }
 
-  .burger-btn {
+  .header-btn {
     display: none;
   }
 
@@ -90,5 +94,3 @@
     text-decoration: underline;
   }
 }
-
-
