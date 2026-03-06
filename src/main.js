@@ -13,6 +13,7 @@ import './js/slider.js';
 import './js/accordion.js';
 import './js/filter.js';
 import './js/pagination.js';
+import './js/adopt-modal.js';
 
 // Модалки
 import './js/modal.js';
