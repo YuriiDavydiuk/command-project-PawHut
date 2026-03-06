@@ -33,10 +33,12 @@ export function renderAnimalCards(products) {
         <img class="product-img" src="${image}" alt=${description}/>
         <p class="product-species">${species}</p>
         <h3 class="product-name">${name}</h3>
-        <p class="product-filter">${categories.map(
-          ({ name }) => `
+        <p class="product-filter">${categories
+          .map(
+            ({ name }) => `
           <button type="button" class="product-filter-btn">${name}</button>`
-        )}
+          )
+          .join('')}
         </p>
         <p class="product-age-gender"><span class="product-age">${age}</span><span class="product-gender">${gender}</span></p>
         <p class="product-description">${shortDescription}</p>
