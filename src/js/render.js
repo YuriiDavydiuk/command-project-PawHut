@@ -87,7 +87,7 @@ export function renderDetailsHTML(pet) {
         </div>
         <div class="description-section">
           <h3 class="description-title">Поведiнка:</h3>
-          <p class="short-dscr description-text">${pet.shortDescription}</p>
+          <p class="behavior-dscr description-text">${pet.behavior}</p>
         </div>
          <button class="btn-primary btn-to-order" data-modal-next="order" type="button">
             Взяти додому
