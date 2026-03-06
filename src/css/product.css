@@ -1,0 +1,282 @@
+/* Секція */
+
+.our-tails {
+  padding: 64px 0 32px 0;
+  color: #02060a;
+}
+
+@media only screen and (min-width: 1440px) {
+  .our-tails {
+    padding-top: 80px;
+  }
+}
+
+/* Заголовки */
+
+.tails-title {
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+@media only screen and (min-width: 1440px) {
+  .tails-title {
+    font-size: 48px;
+  }
+}
+
+.tails-subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+@media only screen and (min-width: 1440px) {
+  .tails-subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+}
+
+/* Категорії */
+
+.tails-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1440px) {
+  .tails-filters {
+    max-width: 579px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .tails-filters {
+    margin-bottom: 40px;
+  }
+}
+.category-btn {
+  border-radius: 100px;
+  padding: 10px 16px;
+  background-color: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media only screen and (min-width: 1440px) {
+  .category-btn {
+    font-size: 16px;
+  }
+}
+
+.accent {
+  border: 1px solid transparent;
+  background-color: #eee9e3;
+}
+
+/* Карточки products*/
+
+.tails-products {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media only screen and (min-width: 768px) {
+  .tails-products {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.product-card {
+  border-radius: 16px;
+  padding: 12px;
+  min-height: 499px;
+  background-color: #eee9e3;
+}
+
+@media only screen and (min-width: 768px) {
+  .product-card {
+    width: calc((100% - 1 * 32px) / 2);
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .product-card {
+    width: calc((100% - 2 * 32px) / 3);
+    min-height: 604px;
+  }
+}
+
+.product-img {
+  width: 100%;
+  max-height: 245px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  object-fit: cover;
+  object-position: center;
+}
+@media only screen and (min-width: 1440px) {
+  .product-img {
+    max-height: 309px;
+  }
+}
+.product-species {
+  font-size: 10px;
+  /* margin-bottom: 4px; */
+}
+
+@media only screen and (min-width: 1440px) {
+  .product-species {
+    font-size: 12px;
+  }
+}
+
+.product-name {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  /* margin-bottom: 4px; */
+}
+
+@media only screen and (min-width: 1440px) {
+  .product-name {
+    font-size: 24px;
+  }
+}
+
+.product-filter {
+  /* margin-bottom: 4px; */
+}
+
+.product-filter-btn {
+  font-weight: 600;
+  font-size: 10px;
+  padding: 4px 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 100px;
+  background-color: rgba(2, 6, 10, 0.05);
+}
+
+@media only screen and (min-width: 1440px) {
+  .product-filter-btn {
+    font-size: 12px;
+  }
+}
+
+.product-age-gender {
+  font-weight: 400;
+  font-size: 10px;
+  /* margin-bottom: 16px; */
+}
+
+@media only screen and (min-width: 1440px) {
+  .product-age-gender {
+    font-size: 12px;
+  }
+}
+
+.product-age {
+  margin-right: 16px;
+}
+
+.product-description {
+  font-size: 12px;
+  min-height: 40px;
+  /* margin-bottom: 16px; */
+}
+
+@media only screen and (min-width: 1440px) {
+  .product-description {
+    font-size: 14px;
+  }
+}
+
+.btn-more {
+  border: 1px solid #02060a;
+  border-radius: 8px;
+  padding: 8px 20px;
+  background-color: transparent;
+  width: 100%;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media only screen and (min-width: 1440px) {
+  .btn-more {
+    font-size: 16px;
+  }
+}
+
+/* Показати більше */
+.tails-btn {
+  margin-top: 40px;
+  border: 1px solid #88765c;
+  border-radius: 8px;
+  padding: 12px 24px;
+  background-color: #88765c;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fff;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .tails-btn {
+    display: block;
+    width: 335px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .tails-btn {
+    width: 192px;
+    font-size: 16px;
+  }
+}
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Чтобы все карточки в ряду были одной высоты */
+}
+
+/* Верхняя группа: отступы между элементами 4px */
+.card-top-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* МАГИЯ ТУТ: Распорка */
+.spacer {
+  flex-grow: 1; /* Занимает всё свободное место */
+  min-height: 4px; /* Минимальный отступ, если контента очень много */
+}
+
+/* Нижняя группа: отступы между элементами 16px */
+.card-bottom-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Внутри возраста оставляем маленькое расстояние между словами */
+.product-age-gender {
+  display: flex;
+  gap: 8px;
+}
