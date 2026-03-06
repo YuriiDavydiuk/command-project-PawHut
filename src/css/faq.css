@@ -1,0 +1,114 @@
+.faq-section {
+    padding: 60px 0;
+    background-color: #f8f7f5;
+}
+
+.faq-main-title {
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.accordion-item {
+    background-color: #ede9e3;
+    border-radius: 15px;
+    margin-bottom: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    text-align: left;
+}
+
+.faq-question-text {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.faq-icon-wrapper {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+/* Поворот иконки */
+.accordion-item.active .faq-icon-wrapper {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 1000px;
+}
+
+.faq-answer-inner {
+    padding: 0 32px 32px 32px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* --- НАСТРОЙКИ СПИСКОВ (ЧТОБЫ БЫЛИ ЦИФРЫ И ТОЧКИ) --- */
+
+.faq-list {
+    margin: 16px 0 0 0;
+    padding-left: 25px;
+    /* Отступ для маркеров */
+}
+
+/* Нумерованный список (1. 2. 3.) */
+ol.faq-list {
+    list-style-type: decimal !important;
+    /* Принудительно включаем цифры */
+}
+
+/* Маркированный список (точки) */
+ul.faq-list {
+    list-style-type: disc !important;
+    /* Принудительно включаем точки */
+}
+
+.faq-list li {
+    margin-bottom: 12px;
+    padding-left: 8px;
+    /* Расстояние от цифры/точки до текста */
+    display: list-item;
+    /* Важно: возвращаем стандартное отображение списка */
+}
+
+/* Адаптивность */
+@media screen and (max-width: 767px) {
+    .faq-main-title {
+        font-size: 24px;
+    }
+
+    .accordion-header {
+        padding: 20px;
+    }
+
+    .faq-question-text {
+        font-size: 16px;
+    }
+
+    .faq-answer-inner {
+        padding: 0 20px 20px;
+    }
+
+    .faq-list {
+        padding-left: 20px;
+    }
+}
