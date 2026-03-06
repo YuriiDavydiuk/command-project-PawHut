@@ -30,6 +30,7 @@ export function renderAnimalCards(products) {
         species,
       }) => `
     <li class="product-card" data-id="${_id}">
+        <div class="card-top-group">
         <img class="product-img" src="${image}" alt=${description}/>
         <p class="product-species">${species}</p>
         <h3 class="product-name">${name}</h3>
@@ -40,6 +41,9 @@ export function renderAnimalCards(products) {
           )
           .join('')}
         </p>
+          </div>
+              <div class="spacer"></div>
+              <div class="card-bottom-group">
         <p class="product-age-gender"><span class="product-age">${age}</span><span class="product-gender">${gender}</span></p>
         <p class="product-description">${shortDescription}</p>
         <button
@@ -49,6 +53,7 @@ export function renderAnimalCards(products) {
       >
         Дізнатись більше
       </button>
+       </div>
     </li>`
     )
     .join('');
