@@ -9,10 +9,12 @@ export const fetchCategories = async () => {
   return data;
 };
 
-export const fetchAnimals = async () => {
-  const { data } = await axios(ENDPOINTS.animals);
+export async function fetchAnimals(page = 1, limit = 9) {
+  const response = await fetch(
+    `${BASE_URL}${ENDPOINTS.animals}?page=${page}&limit=${limit}`
+  );
 
-  return data;
-};
+  return response.json();
+}
 
 export const fetchFeedbacks = async () => [];
