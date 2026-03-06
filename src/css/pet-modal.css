@@ -15,8 +15,6 @@
   align-items: center;
   overflow-y: hidden;
 
-  /* display: block;
-  overflow-y: auto; */
   opacity: 1;
   transition: opacity 250ms ease;
 }
