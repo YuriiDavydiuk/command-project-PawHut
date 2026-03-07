@@ -156,6 +156,10 @@
   background-color: #8e8e8e;
 }
 
+.testimonials-pagination .swiper-pagination-bullet:active {
+  background-color: #6f6f6f;
+}
+
 .testimonials-controls {
   display: flex;
   justify-content: center;
@@ -189,6 +193,11 @@
 .control-btn:focus {
   background-color: #ede4dc;
   border-color: #c4b4a8;
+}
+
+.control-btn:active {
+  background-color: #e1d6cc;
+  border-color: #b8a694;
 }
 
 .control-btn.is-disabled {

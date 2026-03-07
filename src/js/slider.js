@@ -24,6 +24,12 @@ const FALLBACK_FEEDBACKS = [
       "Я завжди хотіла взяти котика, але боялася, що доросла тварина не зможе звикнути. Волонтери переконали мене дати шанс Алісі, і це було найкраще рішення! Її муркотіння — найкращий антистрес після робочого дня. Не бійтеся брати дорослих хвостиків, вони віддячать вам безмежною любов'ю!",
     rate: 5,
   },
+  {
+    author: 'Марина та Сергій',
+    description:
+      'Ми довго вагалися, чи готові до собаки, але коли побачили на сайті Хатинки фото Арчі, зрозуміли — це наш. Тепер ми не уявляємо ранків без його веселого гавкоту та вечорів без спільних прогулянок. Він приніс у наш дім стільки сміху та любові! Дякуємо „Хатинці лапок“ за нашого найкращого друга.',
+    rate: 4.5,
+  },
 ];
 
 const refs = {
@@ -107,9 +113,9 @@ function createFeedbackCardMarkup({ author, description, rate }) {
   return `
 		<li class="testimonial-card swiper-slide">
 			<div class="testimonial-rating" data-rate="${Number(rate) || 0}"></div>
-			<p class="testimonial-text">${description ?? ''}</p>
+      <p class="testimonial-text">${escapeHtml(description ?? '')}</p>
 			<div class="testimonial-author-wrapper">
-				<h3 class="testimonial-author">${author ?? 'Анонім'}</h3>
+        <h3 class="testimonial-author">${escapeHtml(author ?? 'Анонім')}</h3>
 			</div>
 		</li>
 	`;
@@ -134,11 +140,20 @@ function ensureMinimumFeedbacks(feedbacks, minCount) {
 }
 
 function normalizeSlides(feedbacks) {
-  const normalized = ensureMinimumFeedbacks(feedbacks, 2);
+  const normalized = ensureMinimumFeedbacks(feedbacks, 3);
   if (normalized.length % 2 !== 0) {
     normalized.push(normalized[0]);
   }
   return normalized;
+}
+
+function escapeHtml(text) {
+  return String(text)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
 }
 
 function initRatyStars() {
