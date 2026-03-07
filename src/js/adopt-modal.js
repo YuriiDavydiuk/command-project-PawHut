@@ -108,9 +108,10 @@ function validateRequired(fieldEl, message) {
 
 // ====== SUBMIT ======
 function validatePhone(fieldEl) {
-  const phoneValue = fieldEl.value.trim();
+  const phoneValue = fieldEl.value.replace(/\D/g, '');
 
-  // 12 цифр і починається з 380: 380 + 9 цифр плюс перевірка імя
+  fieldEl.value = phoneValue;
+
   const phonePattern = /^380\d{9}$/;
 
   if (!phonePattern.test(phoneValue)) {
@@ -169,7 +170,7 @@ async function handleSubmit(e) {
   //  payload
   const payload = {
     name: name.value.trim(),
-    phone: phone.value.trim(),
+    phone: phone.value.replace(/\D/g, ''),
     animalId: currentAnimalId,
   };
 
