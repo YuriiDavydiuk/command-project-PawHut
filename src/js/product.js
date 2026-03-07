@@ -8,6 +8,8 @@ import {
 } from './render';
 import { refs } from './refs';
 
+export let allAnimals = [];
+
 getCategories();
 getAnimalProducts();
 
@@ -22,13 +24,14 @@ async function getAnimalsByCategory(evt) {
   const categoryId = category.dataset.id;
 
   accentBtn(evt.target);
-
   try {
     // Універсальний запит: якщо 'all', викликаємо fetchAnimals, інакше - за категорією
     const data =
       categoryId === 'all'
         ? await fetchAnimals()
         : await fetchAnimalsByCategory(categoryId);
+
+    allAnimals = data.animals;
 
     // Очищення та рендер робимо один раз в кінці
     clearAnimalsCards();
@@ -56,8 +59,6 @@ async function getCategories() {
     });
   }
 }
-
-export let allAnimals = [];
 
 function getLimit() {
   if (window.innerWidth >= 1440) {

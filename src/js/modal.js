@@ -1,7 +1,7 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-import { renderDetailsHTML, renderOrderHTML } from './render.js';
+import { renderDetailsHTML } from './render.js';
 import { allAnimals } from './product.js';
 
 const mwContainer = document.getElementById('mw');
@@ -15,10 +15,9 @@ document.addEventListener('click', async event => {
   // Кнопка открытия на фому "Pet Modal"
   if (openBtn) {
     const petId = openBtn.dataset.id;
-    const originalText = openBtn.textContent;
-
+    // const originalText = openBtn.textContent;
     openBtn.disabled = true;
-    openBtn.textContent = 'Завантаження...';
+    // openBtn.textContent = 'Завантаження...';
 
     try {
       // Запрос
@@ -40,7 +39,7 @@ document.addEventListener('click', async event => {
     } finally {
       if (openBtn) {
         openBtn.disabled = false;
-        openBtn.textContent = originalText;
+        // openBtn.textContent = originalText;
       }
     }
     return;
