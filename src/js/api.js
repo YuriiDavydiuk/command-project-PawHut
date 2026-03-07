@@ -28,4 +28,12 @@ export async function fetchAnimalsByCategory(categoryId) {
   return data;
 }
 
-export const fetchFeedbacks = async () => [];
+export const fetchFeedbacks = async ({ page = 1, limit = 12 } = {}) => {
+  const { data } = await axios(ENDPOINTS.feedbacks, {
+    params: {
+      page,
+      limit,
+    },
+  });
+  return data.feedbacks ?? [];
+};
