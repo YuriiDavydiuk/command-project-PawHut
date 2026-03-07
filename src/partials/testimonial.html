@@ -5,9 +5,18 @@
       Ці хвостики вже знайшли свій дім. Ваш майбутній друг теж чекає на вас
     </p>
 
-    <div class="testimonials-slider-wrapper">
-      <ul class="testimonials-list">
-        <li class="testimonial-card">
+    <div class="testimonials-slider-wrapper swiper">
+      <div
+        class="testimonials-loader is-hidden"
+        role="status"
+        aria-live="polite"
+      >
+        <span class="testimonials-loader-spinner" aria-hidden="true"></span>
+        <span class="testimonials-loader-text">Завантажуємо історії...</span>
+      </div>
+
+      <ul class="testimonials-list swiper-wrapper">
+        <li class="testimonial-card swiper-slide">
           <div class="testimonial-rating">
             <svg class="icon-star" width="20" height="20">
               <use href="./img/icons.svg#icon-star-filled"></use>
@@ -37,7 +46,7 @@
           </div>
         </li>
 
-        <li class="testimonial-card">
+        <li class="testimonial-card swiper-slide">
           <div class="testimonial-rating">
             <svg class="icon-star" width="20" height="20">
               <use href="./img/icons.svg#icon-star-filled"></use>
@@ -69,13 +78,10 @@
       </ul>
 
       <div class="testimonials-nav-container">
-        <div class="testimonials-pagination" aria-label="Пагінація відгуків">
-          <span class="testimonial-dot" aria-hidden="true"></span>
-          <span class="testimonial-dot" aria-hidden="true"></span>
-          <span class="testimonial-dot is-active" aria-hidden="true"></span>
-          <span class="testimonial-dot" aria-hidden="true"></span>
-          <span class="testimonial-dot" aria-hidden="true"></span>
-        </div>
+        <div
+          class="testimonials-pagination"
+          aria-label="Пагінація відгуків"
+        ></div>
         <div class="testimonials-controls">
           <button
             class="control-btn prev-btn"
