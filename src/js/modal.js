@@ -1,7 +1,8 @@
-import { fetchPetById } from './api.js';
-import { renderDetailsHTML, renderOrderHTML } from './render.js';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+
+import { renderDetailsHTML, renderOrderHTML } from './render.js';
+import { allAnimals } from './product.js';
 
 const mwContainer = document.getElementById('mw');
 
@@ -11,7 +12,7 @@ document.addEventListener('click', async event => {
   const openBtn = target.closest('[data-modal-open]');
   const closeBtn = target.closest('[data-modal-close]');
   const isBackdrop = target.classList.contains('backdrop');
-
+  console.log(allAnimals);
   // Кнопка открытия на фому "Pet Modal"
   if (openBtn) {
     const petId = openBtn.dataset.id;
@@ -21,16 +22,20 @@ document.addEventListener('click', async event => {
     openBtn.textContent = 'Завантаження...';
 
     try {
-      // Запрос но пока имитация
-      const pet = await fetchPetById(petId);
+      // Запрос
+      const pet = allAnimals.find(item => item._id === petId);
+
+      if (!pet) {
+        throw new Error('Тваринку не знайдено');
+      }
 
       // Отрисовка контенка
       mwContainer.innerHTML = renderDetailsHTML(pet);
       document.body.style.overflow = 'hidden';
-    } catch (e) {
+    } catch (error) {
       iziToast.error({
         title: 'Помилка',
-        message: 'Тваринку не знайдено',
+        message: 'Щось пішло не так',
         position: 'topRight',
       });
     } finally {
