@@ -71,10 +71,10 @@ export function renderDetailsHTML(pet) {
     <div class="backdrop is-open">
        <div class="animal-modal">
     <button class="modal-close-btn" data-modal-close type="button">
-          // <svg class="modal-close-icon" width="24" height="24">
-          // <use href="/img/icons.svg#icon-mobile-menu-close"></use>
-          //   <use href="/img/icons.svg#icon-close"></use>
-          // </svg>
+          <svg class="modal-close-icon" width="24" height="24">
+          <use href="./img/icons.svg#icon-mobile-menu-close"></use>
+          <!--  <use href="/img/icons.svg#icon-close"></use> -->
+          </svg>
         </button>
 
       <div class="image-wrapper">
@@ -106,23 +106,5 @@ export function renderDetailsHTML(pet) {
           </button>
       </div>
     </div>
-    </div>`;
-}
-
-export function renderOrderHTML() {
-  return `
-    <div class="backdrop is-open">
-      <div class="animal-modal enter-bottom">
-        <button class="modal-close-btn" data-modal-close>
-        // <svg class="modal-close-icon" width="24" height="24">
-        // <use href="/img/icons.svg#icon-mobile-menu-close"></use>
-        //    <use href="/img/icons.svg#icon-close"></use>
-        //   </svg>
-          </button>
-        <div class="info-wrapper">
-          <h2>Залишіть заявку</h2>
-          <p>Форма здесь...</p>
-        </div>
-      </div>
     </div>`;
 }

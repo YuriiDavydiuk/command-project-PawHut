@@ -1,5 +1,7 @@
 import iziToast from 'izitoast';
-import { fetchAnimals, fetchAnimalsByCategory, fetchCategories } from './api';
+import 'izitoast/dist/css/iziToast.min.css';
+
+import { fetchAnimals, fetchCategories } from './api';
 import { accentBtn, activeFirstBtn } from './helpers';
 import {
   clearAnimalsCards,
@@ -7,77 +9,82 @@ import {
   renderCategories,
 } from './render';
 import { refs } from './refs';
+import { state, getLimit, resetPagination } from './state';
 
-getCategories();
-getAnimalProducts();
+init();
 
-refs.tailsFilters.addEventListener('click', getAnimalsByCategory);
-
-async function getAnimalsByCategory(evt) {
-  if (evt.target.nodeName !== 'BUTTON') {
-    return;
-  }
-
-  const category = evt.target.closest('.category-item');
-  const categoryId = category.dataset.id;
-
-  accentBtn(evt.target);
-
-  try {
-    // Універсальний запит: якщо 'all', викликаємо fetchAnimals, інакше - за категорією
-    const data =
-      categoryId === 'all'
-        ? await fetchAnimals()
-        : await fetchAnimalsByCategory(categoryId);
-
-    // Очищення та рендер робимо один раз в кінці
-    clearAnimalsCards();
-    renderAnimalCards(data);
-  } catch (error) {
-    iziToast.error({
-      message: error.message,
-      position: 'topCenter',
-    });
-  }
+async function init() {
+  await loadCategories();
+  await loadAnimals();
 }
 
-async function getCategories() {
+async function loadCategories() {
   try {
-    const res = await fetchCategories();
-
-    renderCategories([{ name: 'Всі', _id: 'all' }, ...res]);
-
+    const categories = await fetchCategories();
+    renderCategories([{ name: 'Всі', _id: 'all' }, ...categories]);
     activeFirstBtn();
   } catch (error) {
-    console.log(error);
-    iziToast.error({
-      message: error.message,
-      position: 'topCenter',
-    });
+    iziToast.error({ message: error.message, position: 'topCenter' });
   }
 }
 
-export let allAnimals = [];
-
-function getLimit() {
-  if (window.innerWidth >= 1440) {
-    return 9;
-  } else {
-    return 8;
-  }
-}
-
-async function getAnimalProducts() {
+async function loadAnimals() {
   try {
+    refs.tailsBtn.disabled = true;
+
     const limit = getLimit();
-    const data = await fetchAnimals(1, limit);
-    allAnimals = data.animals;
-    renderAnimalCards(data);
-  } catch (error) {
-    console.log(error);
-    iziToast.error({
-      message: error.message,
-      position: 'center',
+    const data = await fetchAnimals({
+      page: state.currentPage,
+      limit,
+      categoryId: state.currentCategoryId,
     });
+
+    state.totalPages = Math.ceil(data.totalItems / limit);
+    state.loadedAnimals.push(...data.animals);
+
+    renderAnimalCards(data);
+    updateLoadMoreBtn(data);
+  } catch (error) {
+    iziToast.error({ message: error.message, position: 'topCenter' });
+  } finally {
+    refs.tailsBtn.disabled = false;
   }
+}
+
+function updateLoadMoreBtn(data) {
+  const noMore =
+    state.currentPage >= state.totalPages || data.animals.length === 0;
+
+  if (noMore) {
+    refs.tailsBtn.classList.add('is-hidden');
+  } else {
+    refs.tailsBtn.classList.remove('is-hidden');
+  }
+}
+
+refs.tailsFilters.addEventListener('click', async evt => {
+  const btn = evt.target.closest('.category-btn');
+  if (!btn) return;
+
+  const categoryItem = btn.closest('.category-item');
+  const newCategoryId =
+    categoryItem.dataset.id === 'all' ? null : categoryItem.dataset.id;
+
+  if (newCategoryId === state.currentCategoryId) return;
+
+  accentBtn(btn);
+  state.currentCategoryId = newCategoryId;
+  resetPagination();
+  clearAnimalsCards();
+  refs.tailsBtn.classList.remove('is-hidden');
+  await loadAnimals();
+});
+
+refs.tailsBtn.addEventListener('click', async () => {
+  state.currentPage += 1;
+  await loadAnimals();
+});
+
+export function getLoadedAnimals() {
+  return state.loadedAnimals;
 }
