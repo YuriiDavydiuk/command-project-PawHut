@@ -8,6 +8,18 @@
   }
 }
 
+.why-paw-hut-container{
+  padding: 0 32px;
+}
+
+/*якщо розтягнути контейнер то кнопки стануть де треба*/
+/*але галерея тоді полетить*/
+/*@media only screen and (min-width: 768px) {*/
+/*  .why-paw-hut-container {*/
+/*    padding: 0 4.5px;*/
+/*  }*/
+/*}*/
+
 .gallery-title{
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
@@ -32,11 +44,7 @@
   }
 }
 
-.gallery-list{
-  margin-bottom: 24px;
-}
-
-.gallery-item{
+.gallery-img-wrapper {
   position: relative;
 }
 
@@ -52,6 +60,7 @@
     rgba(0, 0, 0, 0.63)
   );
 }
+
 
 .overlay{
   position: absolute;
@@ -92,9 +101,14 @@
   display: flex;
   align-items:center;
   justify-content: flex-end;
-  /*margin-top: 24px;*/
 
   position: relative;
+}
+
+@media only screen and (min-width: 768px){
+  .swiper-controls{
+    position: static;
+  }
 }
 
 /* #region swiper-buttons*/
@@ -102,6 +116,25 @@
   display: flex;
   gap: 8px;
   padding: 8px;
+}
+
+@media only screen and (min-width: 768px){
+  .gallery-buttons{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 768px){
+  .gallery-buttons{
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 .swiper-button {
@@ -134,47 +167,25 @@
   cursor: default;
   pointer-events: none;
 }
-
-/*@media only screen and (min-width: 768px) {*/
-/*  .gallery-swiper{*/
-/*    position: relative;*/
-/*  }*/
-
-/*  .swiper-button-prev{*/
-/*    position: absolute;*/
-
-/*    top: 50%;*/
-/*    left: 0;*/
-/*    transform: translateX(-50%) translateY(-50%);*/
-/*    z-index: 1;*/
-/*  }*/
-
-/*  .swiper-button-next{*/
-/*    position: absolute;*/
-/*    top: 50%;*/
-/*    right: 0;*/
-/*    transform: translateX(-50%) translateY(-50%);*/
-/*    z-index: 1;*/
-/*  }*/
-
-/*}*/
 /* #endregion */
 
 /* #region pagination*/
 .pagination {
   position: absolute;
-  left: 34px;
-  top: 45px;
-}
+  top: 70%;
+  left: 15%;
+  }
 
-/*.pagination {*/
-/*  position: absolute;*/
-/*  left: 0;*/
-/*  top: 0;*/
-
-/*  !*left: 0;*!*/
-/*  !*top: 50%;*!*/
-/*  !*transform: translateY(-50%);*!*/
+/*@media only screen and (min-width: 768px){*/
+/*  .pagination{*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*transform: translateX(-50%) translateY(-50%);*/
+    /*z-index: 1;*/
+    /*top: 0;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
+/*  }*/
 /*}*/
 
 .swiper-pagination-bullet-active {
