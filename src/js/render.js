@@ -1,4 +1,5 @@
 import { refs } from './refs';
+import icons from '../img/icons.svg';
 
 // рендер категорій наші хвостики
 export function renderCategories(category) {
@@ -70,10 +71,9 @@ export function renderDetailsHTML(pet) {
   return `
     <div class="backdrop is-open">
        <div class="animal-modal">
-    <button class="modal-close-btn" data-modal-close type="button">
+   <button class="modal-close-btn" data-modal-close type="button">
           <svg class="modal-close-icon" width="24" height="24">
-          <use href="./img/icons.svg#icon-mobile-menu-close"></use>
-          <!--  <use href="/img/icons.svg#icon-close"></use> -->
+            <use href="${icons}#icon-close"></use> 
           </svg>
         </button>
 
