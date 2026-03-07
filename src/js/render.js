@@ -61,6 +61,10 @@ export function renderAnimalCards(products) {
   refs.tailsProducts.insertAdjacentHTML('beforeend', murkup);
 }
 
+export function clearAnimalsCards() {
+  refs.tailsProducts.innerHTML = '';
+}
+
 // Функции для возврата контента
 export function renderDetailsHTML(pet) {
   return `

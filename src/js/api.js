@@ -3,6 +3,7 @@ import { BASE_URL, ENDPOINTS } from './constans';
 
 axios.defaults.baseURL = BASE_URL;
 
+// обробка запиту trycatch буде відбуватися там, де ми будем викликати ці функціїї
 export const fetchCategories = async () => {
   const { data } = await axios(ENDPOINTS.categories);
 
@@ -15,6 +16,16 @@ export async function fetchAnimals(page = 1, limit = 9) {
   );
 
   return response.json();
+}
+
+export async function fetchAnimalsByCategory(categoryId) {
+  const { data } = await axios(ENDPOINTS.animals, {
+    params: {
+      categoryId,
+    },
+  });
+
+  return data;
 }
 
 export const fetchFeedbacks = async () => [];
