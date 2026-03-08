@@ -200,8 +200,6 @@ function clearAllErrors() {
 
 // ====== ЛОАДЕР КНОПКИ ======
 function setSubmitLoading(btn, isLoading) {
-  console.log('loader el:', loader);
-  console.log('isLoading:', isLoading);
   btn.disabled = isLoading;
   btn.textContent = isLoading ? 'Відправляємо...' : 'Надіслати';
 
