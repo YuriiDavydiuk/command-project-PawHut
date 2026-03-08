@@ -20,17 +20,29 @@ async function init() {
 
 async function loadCategories() {
   try {
+    showLoader();
     const categories = await fetchCategories();
     renderCategories([{ name: 'Всі', _id: 'all' }, ...categories]);
     activeFirstBtn();
   } catch (error) {
     iziToast.error({ message: error.message, position: 'topCenter' });
+  } finally {
+    hideLoader();
   }
+}
+
+function showLoader() {
+  if (refs.loader) refs.loader.classList.remove('is-hidden');
+  if (refs.tailsBtn) refs.tailsBtn.classList.add('is-hidden');
+}
+function hideLoader() {
+  if (refs.loader) refs.loader.classList.add('is-hidden');
+  if (refs.tailsBtn) refs.tailsBtn.classList.remove('is-hidden');
 }
 
 async function loadAnimals() {
   try {
-    refs.tailsBtn.disabled = true;
+    showLoader();
 
     const limit = getLimit();
     const data = await fetchAnimals({
@@ -47,7 +59,7 @@ async function loadAnimals() {
   } catch (error) {
     iziToast.error({ message: error.message, position: 'topCenter' });
   } finally {
-    refs.tailsBtn.disabled = false;
+    hideLoader();
   }
 }
 
@@ -76,7 +88,7 @@ refs.tailsFilters.addEventListener('click', async evt => {
   state.currentCategoryId = newCategoryId;
   resetPagination();
   clearAnimalsCards();
-  refs.tailsBtn.classList.remove('is-hidden');
+  // refs.tailsBtn.classList.remove('is-hidden');
   await loadAnimals();
 });
 
