@@ -37,7 +37,6 @@ function showLoader() {
 }
 function hideLoader() {
   if (refs.loader) refs.loader.classList.add('is-hidden');
-  if (refs.tailsBtn) refs.tailsBtn.classList.remove('is-hidden');
 }
 
 async function loadAnimals() {
