@@ -142,7 +142,8 @@
 //   e.preventDefault();
 
 //   const { name, phone, comment } = e.target.elements;
-
+// const submitBtn = e.target.querySelector('.submit-btn');
+// const originalBtnText = submitBtn.textContent;
 //   // перевірка поля форми
 //   const isNameFilled = validateRequired(name, "Будь ласка введіть ім'я");
 //   const isNameValid = isNameFilled ? validateName(name) : false;
@@ -181,6 +182,8 @@
 
 //   // 4. Запит
 //   try {
+//submitBtn.disabled = true;
+//submitBtn.textContent = 'Відправляємо...';
 //     const { data } = await axios.post(
 //       'https://paw-hut.b.goit.study/api/orders',
 //       payload
