@@ -30,6 +30,7 @@
 .mobile-menu .container {
   display: flex;
   flex-direction: column;
+
   height: 100%;
   padding-inline: 20px 12px;
   min-height: 64px;
@@ -72,9 +73,7 @@
   flex-direction: column;
   gap: 24px;
 
-  padding: 16px 20px 80px;
-  width: 375px;
-  height: 401px;
+  padding: 16px 0 80px;
 }
 
 .nav-wrap {
@@ -85,8 +84,6 @@
   gap: 64px;
 
   padding: 24px 0px 0px;
-  width: 335px;
-  height: 305px;
 }
 
 .mobile-menu-list {
@@ -107,7 +104,7 @@
   border: 1px solid rgba(136, 118, 92, 1);
   border-radius: 8px;
   padding: 8px 20px;
-  width: 335px;
+  width: 308px;
   height: 37px;
 
   background: rgba(136, 118, 92, 1);
