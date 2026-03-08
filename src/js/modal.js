@@ -12,6 +12,8 @@ const orderBackdrop = document.querySelector('[data-modal="order"]');
 const orderForm = orderBackdrop?.querySelector('.js-order-form');
 const orderCloseBtn = orderBackdrop?.querySelector('.js-order-close');
 
+const loader = document.querySelector('[data-loader="order"]');
+
 // ====== ДЕЛЕГУВАННЯ КЛІКІВ (для динамічного контенту) ======
 document.addEventListener('click', event => {
   const target = event.target;
@@ -122,12 +124,15 @@ async function handleOrderSubmit(e) {
   if (comment?.value.trim()) payload.comment = comment.value.trim();
 
   const submitBtn = form.querySelector('[type="submit"]');
-  submitBtn.disabled = true;
-  submitBtn.textContent = 'Відправляємо...';
+  setSubmitLoading(submitBtn, true);
+  // submitBtn.disabled = true;
+  // submitBtn.textContent = 'Відправляємо...';
 
   try {
     const response = await submitOrder(payload);
+
     console.log('Order response:', response);
+    setSubmitLoading(submitBtn, false);
 
     await Swal.fire({
       icon: 'success',
@@ -138,7 +143,7 @@ async function handleOrderSubmit(e) {
     closeOrderModal();
     currentAnimalId = null;
   } catch (error) {
-    Swal.fire({
+    await Swal.fire({
       icon: 'error',
       title: 'Помилка',
       text: error.response?.data?.message || 'Не вдалося відправити заявку.',
@@ -191,4 +196,18 @@ function clearFieldError(fieldEl) {
 
 function clearAllErrors() {
   orderForm?.querySelectorAll('.error').forEach(clearFieldError);
+}
+
+// ====== ЛОАДЕР КНОПКИ ======
+function setSubmitLoading(btn, isLoading) {
+  console.log('loader el:', loader);
+  console.log('isLoading:', isLoading);
+  btn.disabled = isLoading;
+  btn.textContent = isLoading ? 'Відправляємо...' : 'Надіслати';
+
+  if (isLoading) {
+    loader.classList.remove('is-hidden');
+  } else {
+    loader.classList.add('is-hidden');
+  }
 }

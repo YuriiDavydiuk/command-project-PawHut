@@ -22,7 +22,9 @@ export const fetchAnimals = async ({
 
 export const submitOrder = async payload => {
   const { data } = await axios.post(ENDPOINTS.orders, payload);
-  return data; }
+  return data;
+};
+
 export const fetchFeedbacks = async ({ page = 1, limit = 12 } = {}) => {
   const { data } = await axios(ENDPOINTS.feedbacks, {
     params: {
