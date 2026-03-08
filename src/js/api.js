@@ -10,7 +10,7 @@ export const fetchCategories = async () => {
   return data;
 };
 
-export async function fetchAnimals(page = 1, limit = 9) {
+export async function fetchAnimals(page = 1, limit) {
   const response = await fetch(
     `${BASE_URL}${ENDPOINTS.animals}?page=${page}&limit=${limit}`
   );
@@ -18,12 +18,10 @@ export async function fetchAnimals(page = 1, limit = 9) {
   return response.json();
 }
 
-export async function fetchAnimalsByCategory(categoryId) {
-  const { data } = await axios(ENDPOINTS.animals, {
-    params: {
-      categoryId,
-    },
-  });
+export async function fetchAnimalsByCategory(categoryId, page = 1, limit) {
+  const { data } = await axios(
+    `${ENDPOINTS.animals}?categoryId=${categoryId}&page=${page}&limit=${limit}`
+  );
 
   return data;
 }

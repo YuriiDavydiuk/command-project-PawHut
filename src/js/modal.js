@@ -12,7 +12,7 @@ document.addEventListener('click', async event => {
   const openBtn = target.closest('[data-modal-open]');
   const closeBtn = target.closest('[data-modal-close]');
   const isBackdrop = target.classList.contains('backdrop');
-  console.log(allAnimals);
+
   // Кнопка открытия на фому "Pet Modal"
   if (openBtn) {
     const petId = openBtn.dataset.id;
