@@ -106,6 +106,7 @@
   .tails-products {
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: stretch;
   }
 }
 
@@ -294,7 +295,7 @@
 .product-card {
   display: flex;
   flex-direction: column;
-  height: 100%; /* Чтобы все карточки в ряду были одной высоты */
+  height: auto; /* Чтобы все карточки в ряду были одной высоты */
 }
 
 /* Верхняя группа: отступы между элементами 4px */
