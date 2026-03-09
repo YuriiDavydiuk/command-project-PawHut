@@ -8,15 +8,11 @@ A web application for an animal shelter that helps people find pets and simplifi
 
 ## 🌐 Live Demo
 
-🔗 [https://yuriidavydiuk.github.io/command-project-PawHut/]
+🔗 [https://yuriidavydiuk.github.io/command-project-PawHut/](https://yuriidavydiuk.github.io/command-project-PawHut/)
 
 ---
 
-## 📸 Preview
 
-![Preview](#) *(add project screenshot)*
-
----
 
 ## ✨ Features
 
@@ -120,28 +116,30 @@ command-project-PawHut/
 │   │   ├── hero/                  # Images for Hero section
 │   │   └── icons.svg              # SVG icon sprite
 │   ├── js/
+│   │   ├── accordion.js           # Accordion initialization for FAQ section
 │   │   ├── api.js                 # All backend requests (fetchAnimals, fetchCategories, fetchFeedbacks, postOrder)
+│   │   ├── burger.js              # Open/close burger menu
+│   │   ├── constans.js            # Project constants
+│   │   ├── gallery-slider.js      # Swiper initialization for About Us section
+│   │   ├── helpers.js             # Utility helper functions
+│   │   ├── modal.js               # Open/close modal windows (animal details + adoption form)
+│   │   ├── product.js             # Animal section logic (filtering, pagination)
 │   │   ├── refs.js                # DOM element references
 │   │   ├── render.js              # HTML render functions for animal and review cards
-│   │   ├── filter.js              # Animal filtering logic by category
-│   │   ├── pagination.js          # "Load More" button logic and batch counting
-│   │   ├── modal.js               # Open/close modal windows (animal details + adoption form)
-│   │   ├── burger.js              # Open/close burger menu
-│   │   ├── slider.js              # Swiper initialization for gallery and testimonial sections
-│   │   └── accordion.js           # Accordion initialization for FAQ section
+│   │   ├── slider.js              # Swiper initialization for Happy Stories section
+│   │   └── state.js               # Application state management
 │   └── partials/
-│       ├── header.html            # Header markup
-│       ├── mobile-menu.html       # Burger menu markup
-│       ├── hero.html              # Hero section markup
-│       ├── product.html           # Animal catalog markup
-│       ├── pet-modal.html         # Animal details modal markup
 │       ├── adopt-modal.html       # Adoption form modal markup
-│       ├── gallery.html           # About Us section markup
 │       ├── faq.html               # FAQ section markup
-│       ├── testimonial.html       # Happy Stories section markup
-│       └── footer.html            # Footer markup
+│       ├── footer.html            # Footer markup
+│       ├── gallery.html           # About Us section markup
+│       ├── header.html            # Header markup
+│       ├── hero.html              # Hero section markup
+│       ├── mobile-menu.html       # Burger menu markup
+│       ├── pet-modal.html         # Animal details modal markup
+│       ├── product.html           # Animal catalog markup
+│       └── testimonial.html       # Happy Stories section markup
 ├── public/
-│   ├── favicon.svg                # Favicon
 │   ├── company-logo.svg           # Company logo
 │   └── index.html                 # Entry point
 ├── main.js                        # Main JS file (imports all modules)

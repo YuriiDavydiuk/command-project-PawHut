@@ -8,15 +8,11 @@
 
 ## 🌐 Live Demo
 
-🔗 [https://yuriidavydiuk.github.io/command-project-PawHut/]
+🔗 [https://yuriidavydiuk.github.io/command-project-PawHut/](https://yuriidavydiuk.github.io/command-project-PawHut/)
 
 ---
 
-## 📸 Preview
 
-![Preview](#) *(скріншот проєкту)*
-
----
 
 ## ✨ Функціонал
 
@@ -120,28 +116,30 @@ command-project-PawHut/
 │   │   ├── hero/                  # Зображення для секції Hero
 │   │   └── icons.svg              # Спрайт SVG-іконок
 │   ├── js/
+│   │   ├── accordion.js           # Ініціалізація акордеону для секції FAQ
 │   │   ├── api.js                 # Всі запити до бекенду (fetchAnimals, fetchCategories, fetchFeedbacks, postOrder)
+│   │   ├── burger.js              # Відкриття/закриття бургер-меню
+│   │   ├── constans.js            # Константи проєкту
+│   │   ├── gallery-slider.js      # Ініціалізація Swiper для секції «Про нас»
+│   │   ├── helpers.js             # Допоміжні утиліти
+│   │   ├── modal.js               # Відкриття/закриття модальних вікон (тварина + заявка)
+│   │   ├── product.js             # Логіка секції тварин (фільтрація, пагінація)
 │   │   ├── refs.js                # Посилання на DOM-елементи
 │   │   ├── render.js              # Функції рендеру HTML-карток тварин та відгуків
-│   │   ├── filter.js              # Логіка фільтрації тварин за категоріями
-│   │   ├── pagination.js          # Логіка кнопки «Завантажити ще» та підрахунок порцій
-│   │   ├── modal.js               # Відкриття/закриття модальних вікон (тварина + заявка)
-│   │   ├── burger.js              # Відкриття/закриття бургер-меню
-│   │   ├── slider.js              # Ініціалізація Swiper для секцій gallery та testimonial
-│   │   └── accordion.js           # Ініціалізація акордеону для секції FAQ
+│   │   ├── slider.js              # Ініціалізація Swiper для секції «Щасливі історії»
+│   │   └── state.js               # Управління станом застосунку
 │   └── partials/
-│       ├── header.html            # Розмітка хедера
-│       ├── mobile-menu.html       # Розмітка бургер-меню
-│       ├── hero.html              # Розмітка секції Hero
-│       ├── product.html           # Розмітка секції тварин
-│       ├── pet-modal.html         # Розмітка модалки тварини
 │       ├── adopt-modal.html       # Розмітка модалки заявки
-│       ├── gallery.html           # Розмітка секції «Чому Хатинка Лапок»
 │       ├── faq.html               # Розмітка секції FAQ
-│       ├── testimonial.html       # Розмітка секції відгуків
-│       └── footer.html            # Розмітка футера
+│       ├── footer.html            # Розмітка футера
+│       ├── gallery.html           # Розмітка секції «Чому Хатинка Лапок»
+│       ├── header.html            # Розмітка хедера
+│       ├── hero.html              # Розмітка секції Hero
+│       ├── mobile-menu.html       # Розмітка бургер-меню
+│       ├── pet-modal.html         # Розмітка модалки тварини
+│       ├── product.html           # Розмітка секції тварин
+│       └── testimonial.html       # Розмітка секції відгуків
 ├── public/
-│   ├── favicon.svg                # Фавікон
 │   ├── company-logo.svg           # Логотип компанії
 │   └── index.html                 # Точка входу
 ├── main.js                        # Головний JS-файл (імпорти всіх модулів)
