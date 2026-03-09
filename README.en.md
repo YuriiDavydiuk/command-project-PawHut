@@ -181,7 +181,16 @@ Backend: [https://paw-hut.b.goit.study/api-docs/](https://paw-hut.b.goit.study/a
 
 | Name | Role | GitHub |
 |------|------|--------|
-| *name* | Developer | [@username](#) |
+| Amina | Developer | [@Amiinaa08](https://github.com/Amiinaa08) |
+| Alina | Developer | [@alrozental](https://github.com/alrozental) |
+| — | Developer | [@amlnkk](https://github.com/amlnkk) |
+| Bohdan Lysai | Developer | [@BogdanGoIT](https://github.com/BogdanGoIT) |
+| Iryna | Developer | [@IrynaShashkevych28](https://github.com/IrynaShashkevych28) |
+| Karina Lubenskaya | Developer | [@Karina-Ll](https://github.com/Karina-Ll) |
+| Olga Goshko | Developer | [@OlgaGoshko](https://github.com/OlgaGoshko) |
+| Valeriia Vovk | Developer | [@vovklera](https://github.com/vovklera) |
+| Sofia Nahorna | Scrum Master | [@S60862580](https://github.com/S60862580) |
+| Yurii Davydiuk | Team Lead | [@YuriiDavydiuk](https://github.com/YuriiDavydiuk) |
 
 ---
 
