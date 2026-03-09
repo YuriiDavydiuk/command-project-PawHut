@@ -68,7 +68,7 @@
 
 .nav-wrapper {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: flex-start;
   flex-direction: column;
   gap: 24px;
@@ -78,8 +78,9 @@
 
 .nav-wrap {
   display: flex;
-  align-items: flex-start;
+
   justify-content: flex-start;
+  align-items: stretch;
   flex-direction: column;
   gap: 64px;
 
@@ -104,7 +105,8 @@
   border: 1px solid rgba(136, 118, 92, 1);
   border-radius: 8px;
   padding: 8px 20px;
-  width: 308px;
+  width: 100%;
+  max-width: 335px;
   height: 37px;
 
   background: rgba(136, 118, 92, 1);
