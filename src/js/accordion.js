@@ -14,7 +14,7 @@ function initAccordion() {
       <button class="accordion-header">
         <span class="faq-question-text">${item.question}</span>
         <div class="faq-icon-wrapper">
-          <svg width="15" height="15">
+          <svg width="24" height="24">
              <use href="${icons}#icon-add"></use>
           </svg>
         </div>
