@@ -1,4 +1,4 @@
-import{a as y,i as $,S as N,N as H,P as R,R as V,s as F,b as _,c as z,d as B}from"./assets/vendor-DpepIhIB.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))a(n);new MutationObserver(n=>{for(const o of n)if(o.type==="childList")for(const p of o.addedNodes)p.tagName==="LINK"&&p.rel==="modulepreload"&&a(p)}).observe(document,{childList:!0,subtree:!0});function s(n){const o={};return n.integrity&&(o.integrity=n.integrity),n.referrerPolicy&&(o.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?o.credentials="include":n.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function a(n){if(n.ep)return;n.ep=!0;const o=s(n);fetch(n.href,o)}})();const r={tailsFilters:document.querySelector(".tails-filters"),tailsProducts:document.querySelector(".tails-products"),tailsBtn:document.querySelector(".tails-btn"),mwContainer:document.getElementById("mw"),loader:document.querySelector(".loader")},f={openModalBtn:document.querySelector("[data-burger-open]"),closeModalBtn:document.querySelector("[data-burger-close]"),modal:document.querySelector("[data-burger]")};K();function K(){f.openModalBtn.addEventListener("click",t),f.closeModalBtn.addEventListener("click",s),document.addEventListener("keydown",a),f.modal.querySelectorAll('a[href*="#"]').forEach(n=>{n.addEventListener("click",s)});function t(){f.modal.classList.add("is-open"),document.body.style.overflow="hidden"}function s(){f.modal.classList.remove("is-open"),document.body.style.overflow=""}function a(n){n.key==="Escape"&&f.modal.classList.contains("is-open")&&s()}}const W="https://paw-hut.b.goit.study/api/",w={categories:"categories",animals:"animals",feedbacks:"feedbacks",orders:"orders"};y.defaults.baseURL=W;const U=async()=>{const{data:e}=await y.get(w.categories);return e},J=async({page:e=1,limit:t=9,categoryId:s=null}={})=>{const a={page:e,limit:t};s&&(a.categoryId=s);const{data:n}=await y.get(w.animals,{params:a});return n},Z=async({page:e=1,limit:t=12}={})=>{const{data:s}=await y.get(w.feedbacks,{params:{page:e,limit:t}});return s.feedbacks??[]},Q=async e=>{const{data:t}=await y.post(w.orders,e);return t},u={section:document.querySelector(".happy-stories"),sliderEl:document.querySelector(".testimonials-slider-wrapper"),loaderEl:document.querySelector(".testimonials-loader"),listEl:document.querySelector(".testimonials-list"),paginationEl:document.querySelector(".testimonials-pagination"),prevBtn:document.querySelector(".prev-btn"),nextBtn:document.querySelector(".next-btn")},X=1,Y=12,ee={modules:[H,R],slidesPerView:1,slidesPerGroup:1,spaceBetween:16,speed:450,watchOverflow:!0,pagination:{el:u.paginationEl,clickable:!0},navigation:{prevEl:u.prevBtn,nextEl:u.nextBtn,disabledClass:"is-disabled"},breakpoints:{768:{slidesPerView:2,slidesPerGroup:2,spaceBetween:32},1440:{slidesPerView:2,slidesPerGroup:2,spaceBetween:64}}};let S=null;te()&&se();function te(){return Object.values(u).every(Boolean)}async function se(){I(!0);try{const e=await Z({page:X,limit:Y}),t=re(e);ie(t),oe(),ne()}catch{$.error({title:"Помилка",message:"Не вдалося завантажити відгуки.",position:"topRight"})}finally{I(!1)}}function ne(){S&&S.destroy(!0,!0),S=new N(u.sliderEl,ee)}function ae({author:e,description:t,rate:s}){return`
+import{a as g,i as $,S as N,N as H,P as R,R as V,s as F,b as _,c as z,d as x}from"./assets/vendor-DpepIhIB.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))a(n);new MutationObserver(n=>{for(const o of n)if(o.type==="childList")for(const p of o.addedNodes)p.tagName==="LINK"&&p.rel==="modulepreload"&&a(p)}).observe(document,{childList:!0,subtree:!0});function s(n){const o={};return n.integrity&&(o.integrity=n.integrity),n.referrerPolicy&&(o.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?o.credentials="include":n.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function a(n){if(n.ep)return;n.ep=!0;const o=s(n);fetch(n.href,o)}})();const r={tailsFilters:document.querySelector(".tails-filters"),tailsProducts:document.querySelector(".tails-products"),tailsBtn:document.querySelector(".tails-btn"),mwContainer:document.getElementById("mw"),loader:document.querySelector(".loader")},f={openModalBtn:document.querySelector("[data-burger-open]"),closeModalBtn:document.querySelector("[data-burger-close]"),modal:document.querySelector("[data-burger]")};K();function K(){f.openModalBtn.addEventListener("click",t),f.closeModalBtn.addEventListener("click",s),document.addEventListener("keydown",a),f.modal.querySelectorAll('a[href*="#"]').forEach(n=>{n.addEventListener("click",s)});function t(){f.modal.classList.add("is-open"),document.body.style.overflow="hidden"}function s(){f.modal.classList.remove("is-open"),document.body.style.overflow=""}function a(n){n.key==="Escape"&&f.modal.classList.contains("is-open")&&s()}}const W="https://paw-hut.b.goit.study/api/",h={categories:"categories",animals:"animals",feedbacks:"feedbacks",orders:"orders"};g.defaults.baseURL=W;const U=async()=>{const{data:e}=await g.get(h.categories);return e},J=async({page:e=1,limit:t=9,categoryId:s=null}={})=>{const a={page:e,limit:t};s&&(a.categoryId=s);const{data:n}=await g.get(h.animals,{params:a});return n},Z=async({page:e=1,limit:t=12}={})=>{const{data:s}=await g.get(h.feedbacks,{params:{page:e,limit:t}});return s.feedbacks??[]},Q=async e=>{const{data:t}=await g.post(h.orders,e);return t},u={section:document.querySelector(".happy-stories"),sliderEl:document.querySelector(".testimonials-slider-wrapper"),loaderEl:document.querySelector(".testimonials-loader"),listEl:document.querySelector(".testimonials-list"),paginationEl:document.querySelector(".testimonials-pagination"),prevBtn:document.querySelector(".prev-btn"),nextBtn:document.querySelector(".next-btn")},X=1,Y=12,ee={modules:[H,R],slidesPerView:1,slidesPerGroup:1,spaceBetween:16,speed:450,watchOverflow:!0,pagination:{el:u.paginationEl,clickable:!0},navigation:{prevEl:u.prevBtn,nextEl:u.nextBtn,disabledClass:"is-disabled"},breakpoints:{768:{slidesPerView:2,slidesPerGroup:2,spaceBetween:32},1440:{slidesPerView:2,slidesPerGroup:2,spaceBetween:64}}};let S=null;te()&&se();function te(){return Object.values(u).every(Boolean)}async function se(){I(!0);try{const e=await Z({page:X,limit:Y}),t=re(e);ie(t),oe(),ne()}catch{$.error({title:"Помилка",message:"Не вдалося завантажити відгуки.",position:"topRight"})}finally{I(!1)}}function ne(){S&&S.destroy(!0,!0),S=new N(u.sliderEl,ee)}function ae({author:e,description:t,rate:s}){return`
     <li class="testimonial-card swiper-slide">
       <div class="testimonial-rating" data-rate="${Number(s)||0}"></div>
       <p class="testimonial-text">${M(t??"")}</p>
@@ -46,68 +46,70 @@ import{a as y,i as $,S as N,N as H,P as R,R as V,s as F,b as _,c as z,d as B}fro
         <div class="faq-answer-inner">${t.answer}</div>
       </div>
     </div>
-  `).join(""),e.addEventListener("click",t=>{const s=t.target.closest(".accordion-header");if(!s)return;const a=s.parentElement,n=a.classList.contains("active");document.querySelectorAll(".accordion-item").forEach(o=>{o.classList.remove("active")}),n||a.classList.add("active")}))}function ue(){const e=document.querySelector(".category-btn");e&&e.classList.add("category-btn-accent")}function pe(e){document.querySelectorAll(".category-btn-accent").forEach(s=>s.classList.remove("category-btn-accent")),e.classList.add("category-btn-accent")}function me(e){const t=e.map(({_id:s,name:a})=>`
-<li class="category-item" data-id="${s}">
-    <button type="button" class="category-btn">${a}</button>
-</li>`).join("");r.tailsFilters.innerHTML=t}function fe(e){const t=e.animals.map(({_id:s,image:a,name:n,categories:o,age:p,gender:v,shortDescription:m,description:b,species:h})=>`
-    <li class="product-card" data-id="${s}">
-        <div class="card-top-group">
-        <img class="product-img" src="${a}" alt=${b}/>
-        <p class="product-species">${h}</p>
-        <h3 class="product-name">${n}</h3>
-        <p class="product-filter">${o.map(({name:g})=>`
-          <button type="button" class="product-filter-btn">${g}</button>`).join("")}
-        </p>
+  `).join(""),e.addEventListener("click",t=>{const s=t.target.closest(".accordion-header");if(!s)return;const a=s.parentElement,n=a.classList.contains("active");document.querySelectorAll(".accordion-item").forEach(o=>{o.classList.remove("active")}),n||a.classList.add("active")}))}function ue(){const e=document.querySelector(".category-btn");e&&e.classList.add("category-btn-accent")}function pe(e){document.querySelectorAll(".category-btn-accent").forEach(s=>s.classList.remove("category-btn-accent")),e.classList.add("category-btn-accent")}function me(){r.tailsProducts.innerHTML=""}function fe(e){return e.map(({name:t})=>`<button type="button" class="product-filter-btn">${t}</button>`).join("")}function ge(e){const t=e.map(({_id:s,name:a})=>`
+        <li class="category-item" data-id="${s}">
+          <button type="button" class="category-btn">${a}</button>
+        </li>`).join("");r.tailsFilters.innerHTML=t}function ye(e){const t=e.animals.map(({_id:s,image:a,name:n,categories:o,age:p,gender:y,shortDescription:m,description:v,species:b})=>`
+        <li class="product-card" data-id="${s}">
+          <div class="card-top-group">
+            <img class="product-img" src="${a}" alt="${v}"/>
+            <p class="product-species">${b}</p>
+            <h3 class="product-name">${n}</h3>
+            <p class="product-filter">
+              ${fe(o)}
+            </p>
           </div>
-              <div class="spacer"></div>
-              <div class="card-bottom-group">
-        <p class="product-age-gender"><span class="product-age">${p}</span><span class="product-gender">${v}</span></p>
-        <p class="product-description">${m}</p>
-        <button
-        class="btn-more"
-        data-modal-open="details"
-        data-id="${s}"
-      >
-        Дізнатись більше
-      </button>
-       </div>
-    </li>`).join("");r.tailsProducts.insertAdjacentHTML("beforeend",t)}function ge(){r.tailsProducts.innerHTML=""}function ye(e){return`
+          <div class="spacer"></div>
+          <div class="card-bottom-group">
+            <p class="product-age-gender">
+              <span class="product-age">${p}</span>
+              <span class="product-gender">${y}</span>
+            </p>
+            <p class="product-description">${m}</p>
+            <button
+              class="btn-more"
+              data-modal-open="details"
+              data-id="${s}"
+            >
+              Дізнатись більше
+            </button>
+          </div>
+        </li>`).join("");r.tailsProducts.insertAdjacentHTML("beforeend",t)}function ve(e){return`
     <div class="backdrop is-open">
-       <div class="animal-modal">
-   <button class="modal-close-btn" data-modal-close type="button">
+      <div class="animal-modal">
+        <button class="modal-close-btn" data-modal-close type="button">
           <svg class="modal-close-icon" width="24" height="24">
-            <use href="${j}#icon-close"></use> 
+            <use href="${j}#icon-close"></use>
           </svg>
         </button>
-
-      <div class="image-wrapper">
-        <img src="${e.image}" alt="${e.name}" class="animal-img" />
-      </div>
-      <div class="info-wrapper">
-        <div class="animal-data">
-          <p class="animal-type">${e.species}</p>
-          <h2 class="animal-name">${e.name}</h2>
-          <div class="animal-meta">
-            <p class="meta-item age">${e.age}</p>
-            <p class="meta-item gender">${e.gender}</p>
+        <div class="image-wrapper">
+          <img src="${e.image}" alt="${e.name}" class="animal-img"/>
+        </div>
+        <div class="info-wrapper">
+          <div class="animal-data">
+            <p class="animal-type">${e.species}</p>
+            <h2 class="animal-name">${e.name}</h2>
+            <div class="animal-meta">
+              <p class="meta-item age">${e.age}</p>
+              <p class="meta-item gender">${e.gender}</p>
+            </div>
           </div>
-        </div>
-        <div class="description-section">
-          <h3 class="description-title">Опис:</h3>
-          <p class="animal-dscr description-text">${e.description}</p>
-        </div>
-        <div class="description-section">
-          <h3 class="description-title">Здоров'я:</h3>
-          <p class="health-dscr description-text">${e.healthStatus}</p>
-        </div>
-        <div class="description-section">
-          <h3 class="description-title">Поведiнка:</h3>
-          <p class="behavior-dscr description-text">${e.behavior}</p>
-        </div>
-         <button class="btn-primary btn-to-order" data-modal-next="order" type="button">
+          <div class="description-section">
+            <h3 class="description-title">Опис:</h3>
+            <p class="animal-dscr description-text">${e.description}</p>
+          </div>
+          <div class="description-section">
+            <h3 class="description-title">Здоров'я:</h3>
+            <p class="health-dscr description-text">${e.healthStatus}</p>
+          </div>
+          <div class="description-section">
+            <h3 class="description-title">Поведінка:</h3>
+            <p class="behavior-dscr description-text">${e.behavior}</p>
+          </div>
+          <button class="btn-primary btn-to-order" data-modal-next="order" type="button">
             Взяти додому
           </button>
+        </div>
       </div>
-    </div>
-    </div>`}const l={currentCategoryId:null,currentPage:1,totalPages:1,loadedAnimals:[]};function ve(){return window.innerWidth>=1440?9:8}function be(){l.currentPage=1,l.totalPages=1,l.loadedAnimals=[]}he();async function he(){await we(),await x()}async function we(){try{D();const e=await U();me([{name:"Всі",_id:"all"},...e]),ue()}catch(e){$.error({message:e.message,position:"topCenter"})}finally{G()}}function D(){r.loader&&r.loader.classList.remove("is-hidden"),r.tailsBtn&&r.tailsBtn.classList.add("is-hidden")}function G(){r.loader&&r.loader.classList.add("is-hidden")}async function x(){try{D();const e=ve(),t=await J({page:l.currentPage,limit:e,categoryId:l.currentCategoryId});l.totalPages=Math.ceil(t.totalItems/e),l.loadedAnimals.push(...t.animals),fe(t),Le(t)}catch(e){$.error({message:e.message,position:"topCenter"})}finally{G()}}function Le(e){l.currentPage>=l.totalPages||e.animals.length===0?r.tailsBtn.classList.add("is-hidden"):r.tailsBtn.classList.remove("is-hidden")}r.tailsFilters.addEventListener("click",async e=>{const t=e.target.closest(".category-btn");if(!t)return;const s=t.closest(".category-item"),a=s.dataset.id==="all"?null:s.dataset.id;a!==l.currentCategoryId&&(pe(t),l.currentCategoryId=a,be(),ge(),await x())});r.tailsBtn.addEventListener("click",async()=>{l.currentPage+=1,await x()});function qe(){return l.loadedAnimals}let A=null;const i=document.querySelector('[data-modal="order"]'),c=i==null?void 0:i.querySelector(".js-order-form"),E=i==null?void 0:i.querySelector(".js-order-close"),T=document.querySelector('[data-loader="order"]');document.addEventListener("click",e=>{const t=e.target;if(t.closest('[data-modal-open="details"]')){Se(t.closest('[data-modal-open="details"]'));return}if(t.closest('[data-modal-next="order"]')){C(!0),Ee();return}if(t.closest("[data-modal-close]")||t.classList.contains("backdrop")){C();return}});i==null||i.addEventListener("click",e=>{e.target===i&&L()});E==null||E.addEventListener("click",L);document.addEventListener("keydown",e=>{e.key==="Escape"&&(r.mwContainer.innerHTML&&C(),i!=null&&i.classList.contains("is-hidden")||L())});c==null||c.addEventListener("submit",Ae);c==null||c.addEventListener("input",e=>{const t=e.target;t.matches("input, textarea")&&t.classList.contains("error")&&t.value.trim()&&q(t)});function Se(e){const t=e.dataset.id,s=qe().find(a=>a._id===t);s&&(A=t,r.mwContainer.innerHTML=ye(s),document.body.style.overflow="hidden")}function C(e=!1){const t=r.mwContainer.querySelector(".animal-modal"),s=r.mwContainer.querySelector(".backdrop");t==null||t.classList.add("exit-up"),s&&(s.style.opacity="0"),setTimeout(()=>{r.mwContainer.innerHTML="",e||(document.body.style.overflow="")},400)}function Ee(){i==null||i.classList.remove("is-hidden"),document.body.style.overflow="hidden"}function L(){i==null||i.classList.add("is-hidden"),document.body.style.overflow="",c==null||c.reset(),$e()}async function Ae(e){var b,h;e.preventDefault();const t=e.target,{name:s,phone:a,comment:n}=t.elements,o=Ce(s),p=Pe(a);if(!o||!p)return;const v={animalId:A,name:s.value.trim(),phone:a.value.replace(/\D/g,"")};n!=null&&n.value.trim()&&(v.comment=n.value.trim());const m=t.querySelector('[type="submit"]');k(m,!0);try{const g=await Q(v);console.log("Order response:",g),k(m,!1),await B.fire({icon:"success",title:"Заявку відправлено!",text:"Ми зв'яжемося з вами найближчим часом."}),L(),A=null}catch(g){await B.fire({icon:"error",title:"Помилка",text:((h=(b=g.response)==null?void 0:b.data)==null?void 0:h.message)||"Не вдалося відправити заявку."})}finally{m.disabled=!1,m.textContent="Надіслати"}}function Ce(e){return e.value.trim()?/^[A-Za-zА-Яа-яІіЇїЄєҐґ\s'-]{3,}$/.test(e.value.trim())?(q(e),!0):(P(e,"Ім'я має містити мінімум 3 літери"),!1):(P(e,"Будь ласка, введіть ім'я"),!1)}function Pe(e){const t=e.value.replace(/\D/g,"");return e.value=t,/^380\d{9}$/.test(t)?(q(e),!0):(P(e,"Номер має містити 12 цифр і починатися з 380"),!1)}function P(e,t){const s=e.closest(".form-field"),a=s==null?void 0:s.querySelector(".error-text");e.classList.add("error"),a&&(a.textContent=t)}function q(e){const t=e.closest(".form-field"),s=t==null?void 0:t.querySelector(".error-text");e.classList.remove("error"),s&&(s.textContent="")}function $e(){c==null||c.querySelectorAll(".error").forEach(q)}function k(e,t){e.disabled=t,e.textContent=t?"Відправляємо...":"Надіслати",t?T.classList.remove("is-hidden"):T.classList.add("is-hidden")}
+    </div>`}const l={currentCategoryId:null,currentPage:1,totalPages:1,loadedAnimals:[]};function be(){return window.innerWidth>=1440?9:8}function he(){l.currentPage=1,l.totalPages=1,l.loadedAnimals=[]}we();async function we(){await Le(),await B()}async function Le(){try{D();const e=await U();ge([{name:"Всі",_id:"all"},...e]),ue()}catch(e){$.error({message:e.message,position:"topCenter"})}finally{G()}}function D(){r.loader&&r.loader.classList.remove("is-hidden"),r.tailsBtn&&r.tailsBtn.classList.add("is-hidden")}function G(){r.loader&&r.loader.classList.add("is-hidden")}async function B(){try{D();const e=be(),t=await J({page:l.currentPage,limit:e,categoryId:l.currentCategoryId});l.totalPages=Math.ceil(t.totalItems/e),l.loadedAnimals.push(...t.animals),ye(t),qe(t)}catch(e){$.error({message:e.message,position:"topCenter"})}finally{G()}}function qe(e){l.currentPage>=l.totalPages||e.animals.length===0?r.tailsBtn.classList.add("is-hidden"):r.tailsBtn.classList.remove("is-hidden")}r.tailsFilters.addEventListener("click",async e=>{const t=e.target.closest(".category-btn");if(!t)return;const s=t.closest(".category-item"),a=s.dataset.id==="all"?null:s.dataset.id;a!==l.currentCategoryId&&(pe(t),l.currentCategoryId=a,he(),me(),await B())});r.tailsBtn.addEventListener("click",async()=>{l.currentPage+=1,await B()});function Se(){return l.loadedAnimals}let A=null;const i=document.querySelector('[data-modal="order"]'),c=i==null?void 0:i.querySelector(".js-order-form"),E=i==null?void 0:i.querySelector(".js-order-close"),T=document.querySelector('[data-loader="order"]');document.addEventListener("click",e=>{const t=e.target;if(t.closest('[data-modal-open="details"]')){Ee(t.closest('[data-modal-open="details"]'));return}if(t.closest('[data-modal-next="order"]')){C(!0),Ae();return}if(t.closest("[data-modal-close]")||t.classList.contains("backdrop")){C();return}});i==null||i.addEventListener("click",e=>{e.target===i&&w()});E==null||E.addEventListener("click",w);document.addEventListener("keydown",e=>{e.key==="Escape"&&(r.mwContainer.innerHTML&&C(),i!=null&&i.classList.contains("is-hidden")||w())});c==null||c.addEventListener("submit",Ce);c==null||c.addEventListener("input",e=>{const t=e.target;t.matches("input, textarea")&&t.classList.contains("error")&&t.value.trim()&&L(t)});function Ee(e){const t=e.dataset.id,s=Se().find(a=>a._id===t);s&&(A=t,r.mwContainer.innerHTML=ve(s),document.body.style.overflow="hidden")}function C(e=!1){const t=r.mwContainer.querySelector(".animal-modal"),s=r.mwContainer.querySelector(".backdrop");t==null||t.classList.add("exit-up"),s&&(s.style.opacity="0"),setTimeout(()=>{r.mwContainer.innerHTML="",e||(document.body.style.overflow="")},400)}function Ae(){i==null||i.classList.remove("is-hidden"),document.body.style.overflow="hidden"}function w(){i==null||i.classList.add("is-hidden"),document.body.style.overflow="",c==null||c.reset(),Be()}async function Ce(e){var v,b;e.preventDefault();const t=e.target,{name:s,phone:a,comment:n}=t.elements,o=Pe(s),p=$e(a);if(!o||!p)return;const y={animalId:A,name:s.value.trim(),phone:a.value.replace(/\D/g,"")};n!=null&&n.value.trim()&&(y.comment=n.value.trim());const m=t.querySelector('[type="submit"]');k(m,!0);try{const q=await Q(y);console.log("Order response:",q),k(m,!1),await x.fire({icon:"success",title:"Заявку відправлено!",text:"Ми зв'яжемося з вами найближчим часом."}),w(),A=null}catch(q){await x.fire({icon:"error",title:"Помилка",text:((b=(v=q.response)==null?void 0:v.data)==null?void 0:b.message)||"Не вдалося відправити заявку."})}finally{m.disabled=!1,m.textContent="Надіслати"}}function Pe(e){return e.value.trim()?/^[A-Za-zА-Яа-яІіЇїЄєҐґ\s'-]{3,}$/.test(e.value.trim())?(L(e),!0):(P(e,"Ім'я має містити мінімум 3 літери"),!1):(P(e,"Будь ласка, введіть ім'я"),!1)}function $e(e){const t=e.value.replace(/\D/g,"");return e.value=t,/^380\d{9}$/.test(t)?(L(e),!0):(P(e,"Номер має містити 12 цифр і починатися з 380"),!1)}function P(e,t){const s=e.closest(".form-field"),a=s==null?void 0:s.querySelector(".error-text");e.classList.add("error"),a&&(a.textContent=t)}function L(e){const t=e.closest(".form-field"),s=t==null?void 0:t.querySelector(".error-text");e.classList.remove("error"),s&&(s.textContent="")}function Be(){c==null||c.querySelectorAll(".error").forEach(L)}function k(e,t){e.disabled=t,e.textContent=t?"Відправляємо...":"Надіслати",t?T.classList.remove("is-hidden"):T.classList.add("is-hidden")}
 //# sourceMappingURL=index.js.map
