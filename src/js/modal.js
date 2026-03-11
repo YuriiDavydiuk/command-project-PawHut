@@ -1,5 +1,5 @@
-// modal.js
 import Swal from 'sweetalert2';
+
 import { submitOrder } from './api';
 import { renderDetailsHTML } from './render';
 import { refs } from './refs';
@@ -13,6 +13,7 @@ const orderForm = orderBackdrop?.querySelector('.js-order-form');
 const orderCloseBtn = orderBackdrop?.querySelector('.js-order-close');
 
 const loader = document.querySelector('[data-loader="order"]');
+
 
 // ====== ДЕЛЕГУВАННЯ КЛІКІВ (для динамічного контенту) ======
 document.addEventListener('click', event => {
@@ -77,7 +78,8 @@ function openDetailsModal(btn) {
 
   currentAnimalId = petId;
   refs.mwContainer.innerHTML = renderDetailsHTML(pet);
-  document.body.style.overflow = 'hidden';
+   document.body.style.overflow = 'hidden';
+  
 }
 
 function closeDetailsModal(keepOverflow = false) {
@@ -89,7 +91,8 @@ function closeDetailsModal(keepOverflow = false) {
 
   setTimeout(() => {
     refs.mwContainer.innerHTML = '';
-    if (!keepOverflow) document.body.style.overflow = '';
+    if (!keepOverflow) document.body.classList.remove('no-scroll');
+    document.documentElement.style.overflow = '';
   }, 400);
 }
 
@@ -125,8 +128,6 @@ async function handleOrderSubmit(e) {
 
   const submitBtn = form.querySelector('[type="submit"]');
   setSubmitLoading(submitBtn, true);
-  // submitBtn.disabled = true;
-  // submitBtn.textContent = 'Відправляємо...';
 
   try {
     const response = await submitOrder(payload);
@@ -143,14 +144,12 @@ async function handleOrderSubmit(e) {
     closeOrderModal();
     currentAnimalId = null;
   } catch (error) {
+    setSubmitLoading(submitBtn, false);
     await Swal.fire({
       icon: 'error',
       title: 'Помилка',
       text: error.response?.data?.message || 'Не вдалося відправити заявку.',
     });
-  } finally {
-    submitBtn.disabled = false;
-    submitBtn.textContent = 'Надіслати';
   }
 }
 
@@ -203,9 +202,5 @@ function setSubmitLoading(btn, isLoading) {
   btn.disabled = isLoading;
   btn.textContent = isLoading ? 'Відправляємо...' : 'Надіслати';
 
-  if (isLoading) {
-    loader.classList.remove('is-hidden');
-  } else {
-    loader.classList.add('is-hidden');
-  }
+  loader.classList.toggle('is-hidden', !isLoading);
 }
