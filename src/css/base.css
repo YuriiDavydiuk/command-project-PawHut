@@ -10,6 +10,7 @@ body {
   background-color: #f6f4f1;
 }
 
-html, body {
-  overflow-x: hidden;
-}
+
+body.no-scroll {
+  overflow: hidden;
+  }

@@ -10,3 +10,5 @@ export function accentBtn(btn) {
   btns.forEach(btn => btn.classList.remove('category-btn-accent'));
   btn.classList.add('category-btn-accent');
 }
+
+
