@@ -37,7 +37,7 @@ import{a as y,i as $,S as N,N as H,P as R,R as V,s as F,b as _,c as z,d as B}fro
       <button class="accordion-header">
         <span class="faq-question-text">${t.question}</span>
         <div class="faq-icon-wrapper">
-          <svg width="15" height="15">
+          <svg width="24" height="24">
              <use href="${j}#icon-add"></use>
           </svg>
         </div>
