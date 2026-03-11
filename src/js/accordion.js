@@ -1,4 +1,5 @@
 import { faqData } from './faqData';
+import icons from '../img/icons.svg';
 
 initAccordion();
 
@@ -13,8 +14,8 @@ function initAccordion() {
       <button class="accordion-header">
         <span class="faq-question-text">${item.question}</span>
         <div class="faq-icon-wrapper">
-          <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 1V17M1 9H17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg width="15" height="15">
+             <use href="${icons}#icon-add"></use>
           </svg>
         </div>
       </button>

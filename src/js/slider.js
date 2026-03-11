@@ -1,17 +1,20 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
-import { fetchFeedbacks } from './api.js';
-import Raty from 'raty-js';
-import starOn from 'raty-js/src/images/star-on.png';
-import starOff from 'raty-js/src/images/star-off.png';
-import starHalf from 'raty-js/src/images/star-half.png';
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const refs = {
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
+import Raty from 'raty-js';
+import starOn from 'raty-js/src/images/star-on.png';
+import starOff from 'raty-js/src/images/star-off.png';
+import starHalf from 'raty-js/src/images/star-half.png';
+
+import { Navigation, Pagination } from 'swiper/modules';
+import { fetchFeedbacks } from './api.js';
+
+const feedbackRefs = {
   section: document.querySelector('.happy-stories'),
   sliderEl: document.querySelector('.testimonials-slider-wrapper'),
   loaderEl: document.querySelector('.testimonials-loader'),
@@ -21,17 +24,57 @@ const refs = {
   nextBtn: document.querySelector('.next-btn'),
 };
 
+const INITIAL_PAGE = 1;
+const FEEDBACK_LIMIT = 12;
+
+const SWIPER_CONFIG = {
+  modules: [Navigation, Pagination],
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  spaceBetween: 16,
+  speed: 450,
+  watchOverflow: true,
+  pagination: {
+    el: feedbackRefs.paginationEl,
+    clickable: true,
+  },
+  navigation: {
+    prevEl: feedbackRefs.prevBtn,
+    nextEl: feedbackRefs.nextBtn,
+    disabledClass: 'is-disabled',
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 32,
+    },
+    1440: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 64,
+    },
+  },
+};
+
 let testimonialsSwiper = null;
 
-if (refs.section && refs.sliderEl && refs.listEl) {
+if (hasRequiredRefs()) {
   initTestimonials();
+}
+
+function hasRequiredRefs() {
+  return Object.values(feedbackRefs).every(Boolean);
 }
 
 async function initTestimonials() {
   setLoadingState(true);
 
   try {
-    const feedbacks = await fetchFeedbacks({ page: 1, limit: 12 });
+    const feedbacks = await fetchFeedbacks({
+      page: INITIAL_PAGE,
+      limit: FEEDBACK_LIMIT,
+    });
     const slidesData = normalizeSlides(feedbacks);
 
     renderFeedbackSlides(slidesData);
@@ -53,35 +96,7 @@ function setupSwiper() {
     testimonialsSwiper.destroy(true, true);
   }
 
-  testimonialsSwiper = new Swiper(refs.sliderEl, {
-    modules: [Navigation, Pagination],
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    spaceBetween: 16,
-    speed: 450,
-    watchOverflow: true,
-    pagination: {
-      el: refs.paginationEl,
-      clickable: true,
-    },
-    navigation: {
-      prevEl: refs.prevBtn,
-      nextEl: refs.nextBtn,
-      disabledClass: 'is-disabled',
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        spaceBetween: 32,
-      },
-      1440: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        spaceBetween: 64,
-      },
-    },
-  });
+  testimonialsSwiper = new Swiper(feedbackRefs.sliderEl, SWIPER_CONFIG);
 }
 
 function createFeedbackCardMarkup({ author, description, rate }) {
@@ -97,7 +112,9 @@ function createFeedbackCardMarkup({ author, description, rate }) {
 }
 
 function renderFeedbackSlides(feedbacks) {
-  refs.listEl.innerHTML = feedbacks.map(createFeedbackCardMarkup).join('');
+  feedbackRefs.listEl.innerHTML = feedbacks
+    .map(createFeedbackCardMarkup)
+    .join('');
 }
 
 function normalizeSlides(feedbacks) {
@@ -120,7 +137,9 @@ function escapeHtml(text) {
 }
 
 function initRatyStars() {
-  const ratingElements = refs.listEl.querySelectorAll('.testimonial-rating');
+  const ratingElements = feedbackRefs.listEl.querySelectorAll(
+    '.testimonial-rating'
+  );
   ratingElements.forEach(el => {
     const score = Number(el.dataset.rate) || 0;
     new Raty(el, {
@@ -141,14 +160,14 @@ function initRatyStars() {
 }
 
 function setLoadingState(isLoading) {
-  if (!refs.loaderEl) {
+  if (!feedbackRefs.loaderEl) {
     return;
   }
 
-  refs.loaderEl.classList.toggle('is-hidden', !isLoading);
-  refs.listEl.style.display = isLoading ? 'none' : '';
+  feedbackRefs.loaderEl.classList.toggle('is-hidden', !isLoading);
+  feedbackRefs.listEl.style.display = isLoading ? 'none' : '';
 
-  const navContainer = refs.section?.querySelector(
+  const navContainer = feedbackRefs.section?.querySelector(
     '.testimonials-nav-container'
   );
   if (navContainer) {
