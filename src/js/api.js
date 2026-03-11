@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { BASE_URL, ENDPOINTS } from './constans';
+import { BASE_URL, ENDPOINTS } from './constants';
 
 axios.defaults.baseURL = BASE_URL;
 
 export const fetchCategories = async () => {
-  const { data } = await axios(ENDPOINTS.categories);
+  const { data } = await axios.get(ENDPOINTS.categories);
   return data;
 };
 
@@ -16,21 +16,21 @@ export const fetchAnimals = async ({
   const params = { page, limit };
   if (categoryId) params.categoryId = categoryId;
 
-  const { data } = await axios(ENDPOINTS.animals, { params });
-  return data;
-};
-
-export const submitOrder = async payload => {
-  const { data } = await axios.post(ENDPOINTS.orders, payload);
+  const { data } = await axios.get(ENDPOINTS.animals, { params });
   return data;
 };
 
 export const fetchFeedbacks = async ({ page = 1, limit = 12 } = {}) => {
-  const { data } = await axios(ENDPOINTS.feedbacks, {
+  const { data } = await axios.get(ENDPOINTS.feedbacks, {
     params: {
       page,
       limit,
     },
   });
   return data.feedbacks ?? [];
+};
+
+export const submitOrder = async payload => {
+  const { data } = await axios.post(ENDPOINTS.orders, payload);
+  return data;
 };
