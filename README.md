@@ -1,8 +1,8 @@
-# 🐾 Хатинка Лапок
+# 🐾 Paw Hut
 
-> **Кожне життя має значення. Знайди свого вірного друга.**
+> **Every life matters. Find your loyal friend.**
 
-Веб-додаток для притулку тварин, який допомагає знайти домашніх улюбленців та полегшує процес усиновлення. Користувачі можуть переглядати анкети тварин, фільтрувати їх за категоріями та залишати заявки на знайомство.
+A web application for an animal shelter that helps people find pets and simplifies the adoption process. Users can browse animal profiles, filter by category, and submit adoption requests.
 
 ---
 
@@ -14,75 +14,75 @@
 
 
 
-## ✨ Функціонал
+## ✨ Features
 
-- 🐶 **Каталог тварин** — картки тварин з фільтрацією за категоріями та завантаженням додаткових порцій
-- 🔍 **Детальна інформація** — модальне вікно з повним описом тварини
-- 📋 **Форма заявки** — можливість залишити заявку на знайомство з твариною
-- 💬 **Щасливі історії** — відгуки людей, які вже знайшли свого друга (слайдер)
-- ❓ **FAQ** — відповіді на поширені питання (акордеон)
-- 📖 **Про нас** — інформація про притулок (слайдер)
-- 📱 **Адаптивна верстка** — підтримка мобільних (від 375px), планшетів (768px) та десктопів (1440px)
-- 🍔 **Бургер-меню** — для мобільних пристроїв та планшету
-
----
-
-## 🛠 Технології
-
-| Категорія | Технологія |
-|-----------|-----------|
-| Розмітка | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) |
-| Стилізація | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) |
-| Логіка | ![JavaScript](https://img.shields.io/badge/JavaScript_ES6+-F7DF1E?style=flat&logo=javascript&logoColor=black) |
-| Збірник | ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white) |
-| Слайдери | ![Swiper](https://img.shields.io/badge/Swiper.js-6332F6?style=flat&logo=swiper&logoColor=white) |
-| Сповіщення | ![SweetAlert2](https://img.shields.io/badge/SweetAlert2-FF6B6B?style=flat) &nbsp; ![iziToast](https://img.shields.io/badge/iziToast-009688?style=flat) &nbsp; ![basicLightbox](https://img.shields.io/badge/basicLightbox-333333?style=flat) |
-| Рейтинг | ![raty-js](https://img.shields.io/badge/raty--js-FFD700?style=flat) &nbsp; ![CSS Star Rating](https://img.shields.io/badge/CSS_Star_Rating-FFD700?style=flat) |
-| Акордеон | ![accordion-js](https://img.shields.io/badge/accordion--js-4CAF50?style=flat) |
-| Шрифти | IBM Plex Sans · Open Sans (Google Fonts) |
+- 🐶 **Animal Catalog** — animal cards with category filtering and load more pagination
+- 🔍 **Detailed Info** — modal window with full animal description
+- 📋 **Adoption Form** — submit a request to meet an animal
+- 💬 **Happy Stories** — reviews from people who found their pet (slider)
+- ❓ **FAQ** — answers to frequently asked questions (accordion)
+- 📖 **About Us** — information about the shelter (slider)
+- 📱 **Responsive Layout** — support for mobile (from 375px), tablet (768px) and desktop (1440px)
+- 🍔 **Burger Menu** — for mobile devices and tablet
 
 ---
 
-## 📦 Бібліотеки
+## 🛠 Tech Stack
 
-| Бібліотека | Призначення |
-|------------|-------------|
-| **Swiper.js** | Слайдери в секціях «Чому Хатинка Лапок» та «Щасливі історії» — стрілки, пагінація, свайп |
-| **accordion-js** | Акордеон у секції FAQ — розгортання/згортання відповідей |
-| **raty-js** | Відображення рейтингу зірочками у відгуках (підтримка дробових значень) |
-| **CSS Star Rating** | Альтернативна реалізація зірочкового рейтингу через CSS-класи |
-| **SweetAlert2** | Пуш-сповіщення після відправки форми заявки (успіх / помилка) |
-| **iziToast** | Toast-сповіщення для обробки помилок запитів до бекенду |
-| **basicLightbox** | Лайтбокс для відображення зображень або модальних вікон |
+| Category | Technology |
+|----------|-----------|
+| Markup | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) |
+| Styling | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) |
+| Logic | ![JavaScript](https://img.shields.io/badge/JavaScript_ES6+-F7DF1E?style=flat&logo=javascript&logoColor=black) |
+| Bundler | ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white) |
+| Sliders | ![Swiper](https://img.shields.io/badge/Swiper.js-6332F6?style=flat&logo=swiper&logoColor=white) |
+| Notifications | ![SweetAlert2](https://img.shields.io/badge/SweetAlert2-FF6B6B?style=flat) &nbsp; ![iziToast](https://img.shields.io/badge/iziToast-009688?style=flat) &nbsp; ![basicLightbox](https://img.shields.io/badge/basicLightbox-333333?style=flat) |
+| Star Rating | ![raty-js](https://img.shields.io/badge/raty--js-FFD700?style=flat) &nbsp; ![CSS Star Rating](https://img.shields.io/badge/CSS_Star_Rating-FFD700?style=flat) |
+| Accordion | ![accordion-js](https://img.shields.io/badge/accordion--js-4CAF50?style=flat) |
+| Fonts | IBM Plex Sans · Open Sans (Google Fonts) |
 
 ---
 
-## 🚀 Запуск проєкту
+## 📦 Libraries
 
-### Попередні вимоги
+| Library | Purpose |
+|---------|---------|
+| **Swiper.js** | Sliders in the "About Us" and "Happy Stories" sections — arrows, pagination, swipe support |
+| **accordion-js** | Accordion in the FAQ section — expanding/collapsing answers |
+| **raty-js** | Star rating display in review cards (supports fractional values) |
+| **CSS Star Rating** | Alternative star rating implementation using CSS classes |
+| **SweetAlert2** | Push notifications after submitting the adoption form (success / error) |
+| **iziToast** | Lightweight toast notifications for backend request error handling |
+| **basicLightbox** | Lightbox for displaying images or modal windows |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
 
 - [Node.js](https://nodejs.org/) v18+
 - npm
 
-### Інструкція
+### Installation
 
 ```bash
-# 1. Клонуй репозиторій
+# 1. Clone the repository
 git clone https://github.com/your-username/command-project-PawHut.git
 
-# 2. Перейди до папки проєкту
+# 2. Navigate to the project folder
 cd command-project-PawHut
 
-# 3. Встанови залежності
+# 3. Install dependencies
 npm install
 
-# 4. Запусти dev-сервер
+# 4. Start the dev server
 npm run dev
 ```
 
-Проєкт відкриється за адресою `http://localhost:5173`
+The project will open at `http://localhost:5173`
 
-### Збірка для продакшну
+### Production Build
 
 ```bash
 npm run build
@@ -90,96 +90,96 @@ npm run build
 
 ---
 
-## 📁 Структура проєкту
+## 📁 Project Structure
 
 ```
 command-project-PawHut/
 ├── src/
 │   ├── css/
-│   │   ├── reset.css              # Скидання стилів браузера
-│   │   ├── base.css               # Базові стилі та змінні
-│   │   ├── container.css          # Контейнер та сітка
-│   │   ├── animations.css         # CSS-анімації
-│   │   ├── styles.css             # Головний CSS-файл (імпорти)
-│   │   ├── header.css             # Хедер
-│   │   ├── mobile-menu.css        # Бургер-меню
-│   │   ├── hero.css               # Секція Hero
-│   │   ├── product.css            # Секція «Наші хвостики»
-│   │   ├── pet-modal.css          # Модальне вікно тварини
-│   │   ├── adopt-modal.css        # Модальне вікно заявки
-│   │   ├── gallery.css            # Секція «Чому Хатинка Лапок»
-│   │   ├── faq.css                # Секція FAQ
-│   │   ├── testimonial.css        # Секція «Щасливі історії»
-│   │   └── footer.css             # Футер
+│   │   ├── reset.css              # Browser style reset
+│   │   ├── base.css               # Base styles and variables
+│   │   ├── container.css          # Container and grid
+│   │   ├── animations.css         # CSS animations
+│   │   ├── styles.css             # Main CSS file (imports)
+│   │   ├── header.css             # Header
+│   │   ├── mobile-menu.css        # Burger menu
+│   │   ├── hero.css               # Hero section
+│   │   ├── product.css            # Animal catalog section
+│   │   ├── pet-modal.css          # Animal details modal
+│   │   ├── adopt-modal.css        # Adoption form modal
+│   │   ├── gallery.css            # About Us section
+│   │   ├── faq.css                # FAQ section
+│   │   ├── testimonial.css        # Happy Stories section
+│   │   └── footer.css             # Footer
 │   ├── img/
-│   │   ├── gallery/               # Зображення для слайдера «Про нас»
-│   │   ├── hero/                  # Зображення для секції Hero
-│   │   └── icons.svg              # Спрайт SVG-іконок
+│   │   ├── gallery/               # Images for About Us slider
+│   │   ├── hero/                  # Images for Hero section
+│   │   └── icons.svg              # SVG icon sprite
 │   ├── js/
-│   │   ├── accordion.js           # Ініціалізація акордеону для секції FAQ
-│   │   ├── api.js                 # Всі запити до бекенду (fetchAnimals, fetchCategories, fetchFeedbacks, postOrder)
-│   │   ├── burger.js              # Відкриття/закриття бургер-меню
-│   │   ├── constans.js            # Константи проєкту
-│   │   ├── gallery-slider.js      # Ініціалізація Swiper для секції «Про нас»
-│   │   ├── helpers.js             # Допоміжні утиліти
-│   │   ├── modal.js               # Відкриття/закриття модальних вікон (тварина + заявка)
-│   │   ├── product.js             # Логіка секції тварин (фільтрація, пагінація)
-│   │   ├── refs.js                # Посилання на DOM-елементи
-│   │   ├── render.js              # Функції рендеру HTML-карток тварин та відгуків
-│   │   ├── slider.js              # Ініціалізація Swiper для секції «Щасливі історії»
-│   │   └── state.js               # Управління станом застосунку
+│   │   ├── accordion.js           # Accordion initialization for FAQ section
+│   │   ├── api.js                 # All backend requests (fetchAnimals, fetchCategories, fetchFeedbacks, postOrder)
+│   │   ├── burger.js              # Open/close burger menu
+│   │   ├── constans.js            # Project constants
+│   │   ├── gallery-slider.js      # Swiper initialization for About Us section
+│   │   ├── helpers.js             # Utility helper functions
+│   │   ├── modal.js               # Open/close modal windows (animal details + adoption form)
+│   │   ├── product.js             # Animal section logic (filtering, pagination)
+│   │   ├── refs.js                # DOM element references
+│   │   ├── render.js              # HTML render functions for animal and review cards
+│   │   ├── slider.js              # Swiper initialization for Happy Stories section
+│   │   └── state.js               # Application state management
 │   └── partials/
-│       ├── adopt-modal.html       # Розмітка модалки заявки
-│       ├── faq.html               # Розмітка секції FAQ
-│       ├── footer.html            # Розмітка футера
-│       ├── gallery.html           # Розмітка секції «Чому Хатинка Лапок»
-│       ├── header.html            # Розмітка хедера
-│       ├── hero.html              # Розмітка секції Hero
-│       ├── mobile-menu.html       # Розмітка бургер-меню
-│       ├── pet-modal.html         # Розмітка модалки тварини
-│       ├── product.html           # Розмітка секції тварин
-│       └── testimonial.html       # Розмітка секції відгуків
+│       ├── adopt-modal.html       # Adoption form modal markup
+│       ├── faq.html               # FAQ section markup
+│       ├── footer.html            # Footer markup
+│       ├── gallery.html           # About Us section markup
+│       ├── header.html            # Header markup
+│       ├── hero.html              # Hero section markup
+│       ├── mobile-menu.html       # Burger menu markup
+│       ├── pet-modal.html         # Animal details modal markup
+│       ├── product.html           # Animal catalog markup
+│       └── testimonial.html       # Happy Stories section markup
 ├── public/
-│   ├── company-logo.svg           # Логотип компанії
-│   └── index.html                 # Точка входу
-├── main.js                        # Головний JS-файл (імпорти всіх модулів)
-├── vite.config.js                 # Конфігурація Vite
+│   ├── company-logo.svg           # Company logo
+│   └── index.html                 # Entry point
+├── main.js                        # Main JS file (imports all modules)
+├── vite.config.js                 # Vite configuration
 ├── package.json
 ├── .prettierrc.json
 ├── .editorconfig
 ├── .gitignore
-├── README.md                      # Документація (UA)
-└── README.en.md                   # Документація (EN)
+├── README.md                      # Documentation (UA)
+└── README.en.md                   # Documentation (EN)
 ```
 
 ---
 
 ## 🔌 API
 
-Бекенд: [https://paw-hut.b.goit.study/api-docs/](https://paw-hut.b.goit.study/api-docs/)
+Backend: [https://paw-hut.b.goit.study/api-docs/](https://paw-hut.b.goit.study/api-docs/)
 
-| Маршрут | Метод | Опис |
-|---------|-------|------|
-| `/api/categories` | GET | Отримати всі категорії тварин |
-| `/api/animals` | GET | Отримати список тварин |
-| `/feedbacks` | GET | Отримати відгуки |
-| `/orders` | POST | Залишити заявку на знайомство |
-
----
-
-## 📐 Брейкпоінти
-
-| Пристрій | Ширина |
-|----------|--------|
-| 📱 Mobile | від 375px |
-| 📟 Tablet | від 768px |
-| 🖥 Desktop | від 1440px |
+| Route | Method | Description |
+|-------|--------|-------------|
+| `/api/categories` | GET | Get all animal categories |
+| `/api/animals` | GET | Get animal list |
+| `/feedbacks` | GET | Get reviews |
+| `/orders` | POST | Submit an adoption request |
 
 ---
 
-## 👥 Команда
+## 📐 Breakpoints
 
-| Ім'я | Роль | GitHub |
+| Device | Width |
+|--------|-------|
+| 📱 Mobile | from 375px |
+| 📟 Tablet | from 768px |
+| 🖥 Desktop | from 1440px |
+
+---
+
+## 👥 Team
+
+| Name | Role | GitHub |
 |------|------|--------|
 | Amina | Developer | [@Amiinaa08](https://github.com/Amiinaa08) |
 | Alina | Developer | [@alrozental](https://github.com/alrozental) |
@@ -194,6 +194,6 @@ command-project-PawHut/
 
 ---
 
-## 📄 Ліцензія
+## 📄 License
 
-MIT © 2026 Хатинка Лапок
+MIT © 2026 Paw Hut
