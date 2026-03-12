@@ -11,28 +11,34 @@ let currentAnimalId = null;
 const orderBackdrop = document.querySelector('[data-modal="order"]');
 const orderForm = orderBackdrop?.querySelector('.js-order-form');
 const orderCloseBtn = orderBackdrop?.querySelector('.js-order-close');
-
 const loader = document.querySelector('[data-loader="order"]');
 
+// ====== СЛУХАЧІ ПОДІЙ ======
+document.addEventListener('click', handleDocumentClick);
+orderBackdrop?.addEventListener('click', handleBackdropClick);
+orderCloseBtn?.addEventListener('click', closeOrderModal);
+document.addEventListener('keydown', handleKeydown);
+orderForm?.addEventListener('submit', handleOrderSubmit);
+orderForm?.addEventListener('input', handleFormInput);
 
-// ====== ДЕЛЕГУВАННЯ КЛІКІВ (для динамічного контенту) ======
-document.addEventListener('click', event => {
+// Делегування кліків для динамічного контенту модалки
+function handleDocumentClick(event) {
   const target = event.target;
 
-  // 1. Відкрити деталі тварини
+  // Відкриває модалку з деталями тварини
   if (target.closest('[data-modal-open="details"]')) {
     openDetailsModal(target.closest('[data-modal-open="details"]'));
     return;
   }
 
-  // 2. Перейти до форми — закрити деталі, відкрити форму
+  // Переходить від деталей до форми замовлення
   if (target.closest('[data-modal-next="order"]')) {
     closeDetailsModal(true);
     openOrderModal();
     return;
   }
 
-  // 3. Закрити деталі (кнопка або фон)
+  // Закриває модалку деталей по кнопці × або кліку на фон
   if (
     target.closest('[data-modal-close]') ||
     target.classList.contains('backdrop')
@@ -40,48 +46,40 @@ document.addEventListener('click', event => {
     closeDetailsModal();
     return;
   }
-});
+}
 
-// Закрити форму по фону
-orderBackdrop?.addEventListener('click', e => {
+// Закриває форму замовлення при кліку на фон
+function handleBackdropClick(e) {
   if (e.target === orderBackdrop) closeOrderModal();
-});
+}
 
-// Закрити форму по кнопці
-orderCloseBtn?.addEventListener('click', closeOrderModal);
-
-// ESC — закриває будь-що відкрите
-document.addEventListener('keydown', e => {
+// Закриває будь-яку відкриту модалку при натисканні Escape
+function handleKeydown(e) {
   if (e.key !== 'Escape') return;
-
   if (refs.mwContainer.innerHTML) closeDetailsModal();
   if (!orderBackdrop?.classList.contains('is-hidden')) closeOrderModal();
-});
+}
 
-// Submit (статичний елемент — звичайний addEventListener)
-orderForm?.addEventListener('submit', handleOrderSubmit);
-
-// Очищення помилок при введенні
-orderForm?.addEventListener('input', e => {
+// Знімає помилку з поля коли користувач починає вводити коректні дані
+function handleFormInput(e) {
   const field = e.target;
   if (field.matches('input, textarea') && field.classList.contains('error')) {
     if (field.value.trim()) clearFieldError(field);
   }
-});
+}
 
-// ====== ДЕТАЛІ (динамічна модалка) ======
+// Рендерить модалку з деталями тварини і блокує скрол сторінки
 function openDetailsModal(btn) {
   const petId = btn.dataset.id;
   const pet = getLoadedAnimals().find(a => a._id === petId);
-
   if (!pet) return;
 
   currentAnimalId = petId;
   refs.mwContainer.innerHTML = renderDetailsHTML(pet);
-   document.body.style.overflow = 'hidden';
-  
+  document.body.style.overflow = 'hidden';
 }
 
+// Анімує закриття модалки і очищає контейнер
 function closeDetailsModal(keepOverflow = false) {
   const modal = refs.mwContainer.querySelector('.animal-modal');
   const backdrop = refs.mwContainer.querySelector('.backdrop');
@@ -91,17 +89,17 @@ function closeDetailsModal(keepOverflow = false) {
 
   setTimeout(() => {
     refs.mwContainer.innerHTML = '';
-    if (!keepOverflow) document.body.classList.remove('no-scroll');
-    document.documentElement.style.overflow = '';
+    if (!keepOverflow) document.body.style.overflow = '';
   }, 400);
 }
 
-// ====== ФОРМА ЗАМОВЛЕННЯ (статична) ======
+// Показує форму замовлення і блокує скрол сторінки
 function openOrderModal() {
   orderBackdrop?.classList.remove('is-hidden');
   document.body.style.overflow = 'hidden';
 }
 
+// Ховає форму замовлення, скидає поля і знімає блокування скролу
 function closeOrderModal() {
   orderBackdrop?.classList.add('is-hidden');
   document.body.style.overflow = '';
@@ -109,7 +107,7 @@ function closeOrderModal() {
   clearAllErrors();
 }
 
-// ====== SUBMIT ======
+// Відправляє форму замовлення на сервер з валідацією
 async function handleOrderSubmit(e) {
   e.preventDefault();
   const form = e.target;
@@ -131,7 +129,6 @@ async function handleOrderSubmit(e) {
 
   try {
     const response = await submitOrder(payload);
-
     console.log('Order response:', response);
     setSubmitLoading(submitBtn, false);
 
@@ -153,7 +150,7 @@ async function handleOrderSubmit(e) {
   }
 }
 
-// ====== ВАЛІДАЦІЯ ======
+// Перевіряє ім'я — чи не порожнє і чи містить мінімум 3 літери
 function validateName(fieldEl) {
   if (!fieldEl.value.trim()) {
     setFieldError(fieldEl, "Будь ласка, введіть ім'я");
@@ -167,6 +164,7 @@ function validateName(fieldEl) {
   return true;
 }
 
+// Перевіряє телефон — має починатись з 380 і містити 12 цифр
 function validatePhone(fieldEl) {
   const digits = fieldEl.value.replace(/\D/g, '');
   fieldEl.value = digits;
@@ -179,6 +177,7 @@ function validatePhone(fieldEl) {
   return true;
 }
 
+// Додає клас помилки і показує текст помилки під полем
 function setFieldError(fieldEl, message) {
   const wrap = fieldEl.closest('.form-field');
   const errorEl = wrap?.querySelector('.error-text');
@@ -186,6 +185,7 @@ function setFieldError(fieldEl, message) {
   if (errorEl) errorEl.textContent = message;
 }
 
+// Прибирає клас помилки і очищає текст помилки під полем
 function clearFieldError(fieldEl) {
   const wrap = fieldEl.closest('.form-field');
   const errorEl = wrap?.querySelector('.error-text');
@@ -193,14 +193,14 @@ function clearFieldError(fieldEl) {
   if (errorEl) errorEl.textContent = '';
 }
 
+// Очищає всі помилки форми одночасно
 function clearAllErrors() {
   orderForm?.querySelectorAll('.error').forEach(clearFieldError);
 }
 
-// ====== ЛОАДЕР КНОПКИ ======
+// Вмикає або вимикає стан завантаження кнопки сабміту
 function setSubmitLoading(btn, isLoading) {
   btn.disabled = isLoading;
   btn.textContent = isLoading ? 'Відправляємо...' : 'Надіслати';
-
-  loader.classList.toggle('is-hidden', !isLoading);
+  loader?.classList.toggle('is-hidden', !isLoading);
 }
